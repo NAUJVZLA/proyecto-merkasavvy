@@ -2,32 +2,175 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+/* stylos login y register */
+
+
+.login-container {
+  display: flex;
+  height: 100vh;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f4f6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.login-form {
+  width: 400px;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.green-background {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30%;
+  height: 100%;
+  background-color: #4CAF50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4F46E5;
+  margin-bottom: 0.5rem;
+}
+
+.welcome-back {
+  color: #6B7280;
+  margin-bottom: 1.5rem;
+}
+
+.sign-up {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon input {
+  width: 100%;
+  padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+  border: 1px solid #D1D5DB;
+  border-radius: 0.375rem;
+}
+
+.input-with-icon .icon {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9CA3AF;
+}
+
+.forgot-password {
+  display: block;
+  text-align: right;
+  font-size: 0.875rem;
+  color: #4CAF50;
+  margin-top: 0.25rem;
+}
+
+.sign-in-button {
+  width: 100%;
+  background-color: #4F46E5;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sign-in-button:hover {
+  background-color: #4338CA;
+}
+
+.sign-in-link {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: #6B7280;
+}
+
+.sign-in-link a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+/* .vector-container {
+  width: 400px;
+  height: 400;
+} */
+
+
+
+/* Animation Keyframes de los input del login  */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@keyframes scaleUp {
+  from {
+    transform: scale(0.5);
+  }
+
+  to {
+    transform: scale(1);
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
   }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Apply animations to SVG elements */
+#animation {
+  animation: fadeIn 1s ease-in-out;
+}
+
+#animation rect,
+#animation path {
+  animation: scaleUp 1s ease-in-out infinite alternate;
+}
+
+
+
+/* Animation on hover */
+#animation rect:hover,
+#animation path:hover {
+  animation: none;
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
