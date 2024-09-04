@@ -31,7 +31,7 @@ export default function Home() {
       price: "$15.70",
     },
     {
-      title: "Lemon 2",
+      title: "Lemon 2 ",
       img: "https://nextui.org/images/fruit-6.jpeg",
       price: "$8.00",
     },
