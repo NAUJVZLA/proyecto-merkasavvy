@@ -39,7 +39,7 @@ export default function NavigatorComponent() {
     <Navbar>
       <NavbarBrand>
         <MerkaSavvy />
-        <Link href="http://localhost:3000/">
+        <Link href="home">
           <p className="font-bold text-inherit">-MerkaSavvy</p>
         </Link>
       </NavbarBrand>
@@ -103,7 +103,7 @@ export default function NavigatorComponent() {
           </DropdownMenu>
         </Dropdown>
         <NavbarItem isActive>
-          <Link href="http://localhost:3000/">Home</Link>
+          <Link href="home">Home</Link>
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="#">
