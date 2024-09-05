@@ -3,6 +3,8 @@ import { User, Lock } from "lucide-react";
 import Link from "next/link";
 import Logologin from "@/components/types/icons/logo-login";
 
+
+
 const LoginComponent: React.FC = () => {
   return (
     <div className="login-container">
@@ -33,7 +35,7 @@ const LoginComponent: React.FC = () => {
           </button>
         </form>
         <Link className="sign-in-link" href="register">
-          I have an account? Sign Up
+          I don't have an account? Sign Up
         </Link>
       </div>
       <div className="green-background">
