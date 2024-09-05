@@ -1,4 +1,4 @@
-'use client'
+"use client";
 // import React from "react";
 // import { User, Lock } from "lucide-react";
 // import Link from "next/link";
@@ -48,11 +48,10 @@
 
 // export default LoginComponent;
 
-
 import React, { useState } from "react";
 import { User, Lock } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import Logologin from "@/components/types/icons/logo-login";
 
 const LoginComponent: React.FC = () => {
@@ -66,19 +65,19 @@ const LoginComponent: React.FC = () => {
     setError("");
 
     try {
-      const response = await fetch('http://localhost:5000/usuarios', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
+      const response = await fetch("http://localhost:5000/usuarios", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
       });
 
       if (!response.ok) {
-        throw new Error('Login failed');
+        throw new Error("Login failed");
       }
 
       const data = await response.json();
-      localStorage.setItem('token', data.token);
-      router.push('/dashboard'); // Redirect to dashboard after successful login
+      localStorage.setItem("token", "token");
+      router.push("/dashboard"); // Redirect to dashboard after successful login
     } catch (err) {
       setError("Invalid email or password");
     }
