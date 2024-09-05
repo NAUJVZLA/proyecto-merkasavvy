@@ -2,7 +2,7 @@
   "usuarios": [
     {
       "id": 1,
-      "password": "contraseña1",
+      "password": "1",
       "email": "juan.perez@example.com"
     },
     {
@@ -22,12 +22,12 @@
     },
     {
       "id": 5,
-      "password": "contraseña5",
+      "password": "1",
       "email": "luis.fernandez@example.com"
     },
     {
       "id": 6,
-      "password": "contraseña6",
+      "password": "1",
       "email": "laura.sanchez@example.com"
     },
     {
