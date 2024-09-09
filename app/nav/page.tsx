@@ -106,7 +106,7 @@ export default function NavigatorComponent() {
           <Link href="home">Home</Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link color="foreground" href="/products-dashboard">
             Integrations
           </Link>
         </NavbarItem>
