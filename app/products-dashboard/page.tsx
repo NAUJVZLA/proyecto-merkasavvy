@@ -1,29 +1,51 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Product from "@/app/interface/table-products";
+import { Trash2, Save } from "lucide-react";
 
-// Esto es un componente llamado ProductTable que crea una tabla de productos
 const ProductTable: React.FC = () => {
-  // Aquí tenemos una lista de productos que empieza con un producto (Producto J)
-  const [products, setProducts] = useState<Product[]>([
-    {
-      id: "10",
-      name: "Producto J",
-      price: 11.25,
-      measure: "kg",
-      quantity: 70,
-      provider: "Proveedor J",
-    },
-  ]);
+  const [products, setProducts] = useState<Product[]>([]);
 
-  // Esta función cambia un producto en la lista cuando lo editamos
-  const handleProductUpdate = (index: number, updatedProduct: Product) => {
-    const updatedProducts = [...products]; // Creamos una copia de los productos
-    updatedProducts[index] = updatedProduct; // Actualizamos el producto en la posición que indicamos
-    setProducts(updatedProducts); // Guardamos la nueva lista de productos
+  // Función para obtener los productos desde db.json
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/productos");
+      const data = await response.json();
+      setProducts(data);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
   };
 
-  // Aquí mostramos la tabla de productos
+  // Cargar los productos al montar el componente
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  // Función para actualizar un producto
+  const handleProductUpdate = async (
+    index: number,
+    updatedProduct: Product
+  ) => {
+    const updatedProducts = [...products];
+    updatedProducts[index] = updatedProduct;
+
+    setProducts(updatedProducts);
+
+    // Actualizar el producto en la base de datos
+    try {
+      await fetch(`http://localhost:5000/productos/${updatedProduct.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedProduct),
+      });
+    } catch (error) {
+      console.error("Error updating product:", error);
+    }
+  };
+
   return (
     <table className="table">
       <thead>
@@ -31,17 +53,16 @@ const ProductTable: React.FC = () => {
           <th>ID</th>
           <th>Nombre</th>
           <th>Precio</th>
-          <th>Unidad de Medida</th> <th>Cantidad</th>
+          <th>Unidad de Medida</th>
+          <th>Cantidad</th>
           <th>Proveedor</th>
-          <th>Acciones</th>{" "}
+          <th>Acciones</th>
         </tr>
       </thead>
       <tbody>
         {products.map((product, index) => (
           <tr key={product.id}>
-            {" "}
-            {/* Por cada producto en la lista, se crea una fila */}
-            <td>{product.id}</td> {/* Mostramos el ID */}
+            <td>{product.id}</td>
             <td>
               <input
                 className="input"
@@ -49,8 +70,8 @@ const ProductTable: React.FC = () => {
                 value={product.name}
                 onChange={(e) =>
                   handleProductUpdate(index, {
-                    ...product, // Copiamos los valores del producto
-                    name: e.target.value, // Cambiamos solo el nombre
+                    ...product,
+                    name: e.target.value,
                   })
                 }
               />
@@ -62,8 +83,8 @@ const ProductTable: React.FC = () => {
                 value={product.price}
                 onChange={(e) =>
                   handleProductUpdate(index, {
-                    ...product, // Copiamos los valores del producto
-                    price: parseFloat(e.target.value), // Cambiamos solo el precio
+                    ...product,
+                    price: parseFloat(e.target.value),
                   })
                 }
               />
@@ -75,14 +96,13 @@ const ProductTable: React.FC = () => {
                 value={product.measure}
                 onChange={(e) =>
                   handleProductUpdate(index, {
-                    ...product, // Copiamos los valores del producto
-                    measure: e.target.value, // Cambiamos solo la medida
+                    ...product,
+                    measure: e.target.value,
                   })
                 }
               />
             </td>
             <td>
-              {/* Un campo para escribir la cantidad del producto */}
               <input
                 className="input"
                 type="number"
@@ -90,7 +110,7 @@ const ProductTable: React.FC = () => {
                 onChange={(e) =>
                   handleProductUpdate(index, {
                     ...product,
-                    quantity: parseInt(e.target.value), // Cambiamos solo la cantidad
+                    quantity: parseInt(e.target.value),
                   })
                 }
               />
@@ -102,15 +122,21 @@ const ProductTable: React.FC = () => {
                 value={product.provider}
                 onChange={(e) =>
                   handleProductUpdate(index, {
-                    ...product, // Copiamos los valores del producto
-                    provider: e.target.value, // Cambiamos solo el proveedor
+                    ...product,
+                    provider: e.target.value,
                   })
                 }
               />
             </td>
             <td>
-              <button className="button">Editar</button>
-              <button className="button">Eliminar</button>
+              <button className="button">
+                {" "}
+                <Save xlinkTitle="Guardar" />
+              </button>
+              <button className="button">
+                {" "}
+                <Trash2 />
+              </button>
             </td>
           </tr>
         ))}
