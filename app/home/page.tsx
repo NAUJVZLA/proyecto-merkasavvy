@@ -119,12 +119,7 @@ export default function Home() {
       title: "Banana",
       img: "https://nextui.org/images/fruit-7.jpeg",
       price: "$7.50",
-    },
-    {
-      title: "Watermelon",
-      img: "https://nextui.org/images/fruit-8.jpeg",
-      price: "$12.20",
-    },
+    }
   ];
 
   return (
