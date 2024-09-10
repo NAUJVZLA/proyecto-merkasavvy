@@ -156,6 +156,14 @@
       "measure": "kg",
       "quantity": 70,
       "provider": "Proveedor J"
+    },
+    {
+      "id": "11",
+      "name": "Arros con papa",
+      "price": 11.25,
+      "measure": "kg",
+      "quantity": 88,
+      "provider": "Barrio antioquia"
     }
   ]
 }
