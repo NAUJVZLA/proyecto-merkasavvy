@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import Product from "@/app/interface/table-products";
 import { Trash2, Save } from "lucide-react";
+import Nav from "../navGeneral/page"
+
 
 const ProductTable: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -47,6 +49,8 @@ const ProductTable: React.FC = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <table className="table">
       <thead>
         <tr>
@@ -142,6 +146,8 @@ const ProductTable: React.FC = () => {
         ))}
       </tbody>
     </table>
+    </>
+    
   );
 };
 

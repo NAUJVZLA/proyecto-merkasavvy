@@ -7,6 +7,9 @@ import { useRouter } from "next/navigation"; // Importa el hook useRouter para l
 import Logologin from "@/components/types/icons/logo-login"; // Importa un componente de logo
 import { ToastContainer, toast } from "react-toastify"; // Importa ToastContainer y toast
 import "react-toastify/dist/ReactToastify.css"; // Importa estilos de react-toastify
+import Nav from "../navInitial/page"
+
+
 
 const LoginComponent: React.FC = () => {
   // Define el componente funcional LoginComponent
@@ -26,6 +29,7 @@ const LoginComponent: React.FC = () => {
       );
 
       if (user) {
+        sessionStorage.setItem('token', user.name)
         toast.success("Login successful!", {
           position: "top-right",
           autoClose: 3000,
@@ -49,6 +53,8 @@ const LoginComponent: React.FC = () => {
 
   return (
     // Renderiza el componente
+    <>
+    <Nav/>
     <div className="login-container">
       <div className="login-form">
         <h2 className="app-name">MerkaSavvy</h2>
@@ -99,6 +105,7 @@ const LoginComponent: React.FC = () => {
       </div>
       <ToastContainer /> {/* Contenedor de las notificaciones */}
     </div>
+    </>
   );
 };
 

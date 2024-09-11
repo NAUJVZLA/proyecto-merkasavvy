@@ -2,13 +2,19 @@
 import React from "react";
 import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
 import {useRouter} from "next/navigation"
+import Nav from "../navGeneral/page"
 export default function Home() {
   const router = useRouter();
 
   const handleCreateList = () =>{
     router.push('/products-dashboard')
   }
+
+  const auth = sessionStorage.getItem('token')
   return (
+    <>
+    <Nav/>
+    <h1><b>Bienvenido {auth}</b></h1>
     <div className="gap-2 grid grid-cols-2 sm:grid-cols-4">
         <Card
           shadow="sm"
@@ -87,5 +93,6 @@ export default function Home() {
           </CardFooter>
         </Card>      
     </div>
+    </>
   );
 }

@@ -2,6 +2,8 @@
 import dynamic from "next/dynamic";
 import React, { useState, Suspense } from "react";
 import { PlusCircle, List, BarChart2, Calculator } from "lucide-react";
+import Nav from "../navGeneral/page"
+
 
 // Carga dinámica de las secciones
 const CreateList = dynamic(() => import("@/components/CreateList"), {
@@ -58,7 +60,9 @@ const Dashboard = () => {
   };
 
   return (
-    <Suspense
+    <>
+    <Nav/>
+      <Suspense
       fallback={
         <div className="flex items-center justify-center h-screen">
           <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-blue-500"></div>
@@ -114,6 +118,8 @@ const Dashboard = () => {
         </div>
       </div>
     </Suspense>
+    </>
+  
   );
 };
 
