@@ -72,13 +72,8 @@
     },
     {
       "id": "0082",
-      "email": "caridad@gmail.com",
-      "password": "er123"
-    },
-    {
-      "id": "8752",
-      "email": "pacho@gmail.com",
-      "password": "5632"
+      "email": "ju4nc4r1d4d@gmail.com",
+      "password": "1"
     }
   ],
   "productos": [
@@ -161,6 +156,14 @@
       "measure": "kg",
       "quantity": 70,
       "provider": "Proveedor J"
+    },
+    {
+      "id": "11",
+      "name": "Arros con papa",
+      "price": 11.25,
+      "measure": "kg",
+      "quantity": 88,
+      "provider": "Barrio antioquia"
     }
   ]
 }

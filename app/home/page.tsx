@@ -1,57 +1,91 @@
 "use client";
 import React from "react";
 import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
-import Imagen from "@/components/types/svg/image"; // para zoom pendiente por implementar
-
+import {useRouter} from "next/navigation"
 export default function Home() {
-  const list = [
-    {
-      title: "Create List",
-      img: "https://nextui.org/images/fruit-1.jpeg",
-      price: "$5.50",
-    },
-    {
-      title: "My Lists",
-      img: "https://nextui.org/images/fruit-2.jpeg",
-      price: "$3.00",
-    },
-    {
-      title: "Budget",
-      img: "https://nextui.org/images/fruit-3.jpeg",
-      price: "$10.00",
-    },
-    {
-      title: "Information",
-      img: "https://nextui.org/images/fruit-4.jpeg",
-      price: "$5.30",
-    }
-  ];
+  const router = useRouter();
 
+  const handleCreateList = () =>{
+    router.push('/products-dashboard')
+  }
   return (
-    <div className="gap-2 grid grid-cols-2 sm:grid-cols-2">
-      {list.map((item, index) => (
+    <div className="gap-2 grid grid-cols-2 sm:grid-cols-4">
         <Card
           shadow="sm"
-          key={index}
-          isPressable
         >
           <CardBody className="overflow-visible p-0">
             <Image
               shadow="sm"
               radius="lg"
               width="100%"
-              height="50vh"
-              alt={item.title}
+              height="100%"
+              alt="icono"
+              className="w-full object-cover h-[140px]"
+              src="/assets/CREATE LIST.jpeg"
+            />
+          </CardBody>
+          <CardFooter className="text-small justify-between">
+            <b>Create List</b>
+            <button className="text-default-500" onClick={handleCreateList}>Go <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-move-right"><path d="M18 8L22 12L18 16"/><path d="M2 12H22"/></svg></button>
+          </CardFooter>
+        </Card>
+        <Card
+          shadow="sm"
+        >
+          <CardBody className="overflow-visible p-0">
+            <Image
+              shadow="sm"
+              radius="lg"
+              width="100%"
+              height="100%"
+              alt="icono"
+              className="w-full object-cover h-[140px]"
+              src="/assets/PURCHASE LIST.jpeg"
+            />
+          </CardBody>
+          <CardFooter className="text-small justify-between">
+            <b>Purchase List</b>
+            <button className="text-default-500">Go <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-move-right"><path d="M18 8L22 12L18 16"/><path d="M2 12H22"/></svg></button>
+          </CardFooter>
+        </Card>
+        <Card
+          shadow="sm"
+        >
+          <CardBody className="overflow-visible p-0">
+            <Image
+              shadow="sm"
+              radius="lg"
+              width="100%"
+              height="100%"
+              alt="icono"
               className="w-full object-cover h-[140px]"
               src="/assets/BUDGET.jpeg"
             />
           </CardBody>
           <CardFooter className="text-small justify-between">
-            <b>{item.title}</b>
-            <p className="text-default-500">{item.price}</p>
+            <b>Budget</b>
+            <button className="text-default-500">Go <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-move-right"><path d="M18 8L22 12L18 16"/><path d="M2 12H22"/></svg></button>
           </CardFooter>
         </Card>
-      ))}
+        <Card
+          shadow="sm"
+        >
+          <CardBody className="overflow-visible p-0">
+            <Image
+              shadow="sm"
+              radius="lg"
+              width="100%"
+              height="100%"
+              alt="icono"
+              className="w-full object-cover h-[140px]"
+              src="/assets/INFORMATION.jpeg"
+            />
+          </CardBody>
+          <CardFooter className="text-small justify-between">
+            <b>Information</b>
+            <button className="text-default-500">Go <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-move-right"><path d="M18 8L22 12L18 16"/><path d="M2 12H22"/></svg></button>
+          </CardFooter>
+        </Card>      
     </div>
   );
 }

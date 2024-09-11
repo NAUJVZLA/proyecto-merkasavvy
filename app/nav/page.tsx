@@ -104,6 +104,7 @@ export default function NavigatorComponent() {
         </Dropdown>
         <NavbarItem isActive>
           <Link href="home">Home</Link>
+          <Link href="menu">PAGE</Link>
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="/products-dashboard">
