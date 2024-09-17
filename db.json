@@ -92,56 +92,62 @@
       "email": "ramirito@gmail.com",
       "password": "1",
       "name": "ramiro"
+    },
+    {
+      "id": "7cb2",
+      "email": "jhonmore@gmail.com",
+      "password": "1",
+      "name": "jhon more"
     }
   ],
   "productos": [
     {
       "id": "1",
-      "name": "Producto A",
-      "price": 10.99,
-      "measure": "kg",
-      "quantity": 100,
-      "provider": "Proveedor A"
+      "name": "Arroz",
+      "price": 2500,
+      "measure": "lb",
+      "quantity": 2,
+      "provider": "D1"
     },
     {
       "id": "2",
-      "name": "Producto B",
-      "price": 15.49,
-      "measure": "kg",
-      "quantity": 50,
-      "provider": "Proveedor B"
+      "name": "Frijol",
+      "price": 5000,
+      "measure": "lb",
+      "quantity": 4,
+      "provider": "Exito"
     },
     {
       "id": "3",
-      "name": "Producto C",
-      "price": 7.99,
-      "measure": "kg",
-      "quantity": 200,
-      "provider": "Proveedor C"
+      "name": "Arepas",
+      "price": 2000,
+      "measure": "unidad",
+      "quantity": 3,
+      "provider": "Ara"
     },
     {
       "id": "4",
-      "name": "Producto D",
-      "price": 20,
-      "measure": "kg",
-      "quantity": 30,
-      "provider": "Proveedor D"
+      "name": "Chocolisto",
+      "price": 5500,
+      "measure": "unidad",
+      "quantity": 2,
+      "provider": "D1"
     },
     {
       "id": "5",
-      "name": "Producto E",
-      "price": 5.75,
-      "measure": "kg",
-      "quantity": 150,
-      "provider": "Proveedor E"
+      "name": "chocorramo",
+      "price": 2500,
+      "measure": "unidad",
+      "quantity": 10,
+      "provider": "Carulla"
     },
     {
       "id": "6",
-      "name": "Producto F",
-      "price": 12.3,
-      "measure": "kg",
-      "quantity": 80,
-      "provider": "Proveedor F"
+      "name": "huevos canasta",
+      "price": 15000,
+      "measure": "unidad",
+      "quantity": 1,
+      "provider": "D1"
     },
     {
       "id": "7",
@@ -177,11 +183,11 @@
     },
     {
       "id": "11",
-      "name": "Arros con papa",
-      "price": 11.25,
-      "measure": "kg",
-      "quantity": 88,
-      "provider": "Barrio antioquia"
+      "name": "Aceite",
+      "price": 8500,
+      "measure": "l",
+      "quantity": 4,
+      "provider": "Carulla"
     }
   ]
 }
