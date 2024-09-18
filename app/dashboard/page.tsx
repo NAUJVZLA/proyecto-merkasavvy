@@ -11,7 +11,7 @@ const CreateList = dynamic(() => import("@/components/CreateList"), {
 const ViewLists = dynamic(() => import("@/components/ViewLists"), {
   suspense: true,
 });
-const PurchaseSummary = dynamic(() => import("@/components/PurchaseSummary"), {
+const PurchaseSummary = dynamic(() => import(""), {
   suspense: true,
 });
 const Budget = dynamic(() => import(""), { suspense: true });
