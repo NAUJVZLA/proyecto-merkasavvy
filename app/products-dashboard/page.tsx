@@ -1,10 +1,12 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Product from "@/app/interface/table-products";
-import { Trash2, Save } from "lucide-react";
+import { Trash2, Save, FilePen } from "lucide-react"; // Cambiar 'file-pen-line' a 'FilePen'
+import Nav from "../navGeneral/page";
 
 const ProductTable: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  const [savedProducts, setSavedProducts] = useState<Product[]>([]);
 
   // Función para obtener los productos desde db.json
   const fetchProducts = async () => {
@@ -46,102 +48,137 @@ const ProductTable: React.FC = () => {
     }
   };
 
+  
+
+  const handleEditProduct = (product: Product) => {
+    if (!product.name || !product.price || !product.measure || !product.quantity || !product.provider) {
+      alert("Por favor, diligencie todos los datos del producto."); 
+      return; 
+    }
+    setSavedProducts((prev) => [...prev, product]); 
+  };
+
+  const handleDeleteProduct = (index: number) => {
+    const updatedProducts = [...products];
+    updatedProducts.splice(index, 1);
+    setProducts(updatedProducts);
+  };
+
+  
+
   return (
-    <table className="table">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Nombre</th>
-          <th>Precio</th>
-          <th>Unidad de Medida</th>
-          <th>Cantidad</th>
-          <th>Proveedor</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        {products.map((product, index) => (
-          <tr key={product.id}>
-            <td>{product.id}</td>
-            <td>
-              <input
-                className="input"
-                type="text"
-                value={product.name}
-                onChange={(e) =>
-                  handleProductUpdate(index, {
-                    ...product,
-                    name: e.target.value,
-                  })
-                }
-              />
-            </td>
-            <td>
-              <input
-                className="input"
-                type="number"
-                value={product.price}
-                onChange={(e) =>
-                  handleProductUpdate(index, {
-                    ...product,
-                    price: parseFloat(e.target.value),
-                  })
-                }
-              />
-            </td>
-            <td>
-              <input
-                className="input"
-                type="text"
-                value={product.measure}
-                onChange={(e) =>
-                  handleProductUpdate(index, {
-                    ...product,
-                    measure: e.target.value,
-                  })
-                }
-              />
-            </td>
-            <td>
-              <input
-                className="input"
-                type="number"
-                value={product.quantity}
-                onChange={(e) =>
-                  handleProductUpdate(index, {
-                    ...product,
-                    quantity: parseInt(e.target.value),
-                  })
-                }
-              />
-            </td>
-            <td>
-              <input
-                className="input"
-                type="text"
-                value={product.provider}
-                onChange={(e) =>
-                  handleProductUpdate(index, {
-                    ...product,
-                    provider: e.target.value,
-                  })
-                }
-              />
-            </td>
-            <td>
-              <button className="button">
-                {" "}
-                <Save xlinkTitle="Guardar" />
-              </button>
-              <button className="button">
-                {" "}
-                <Trash2 />
-              </button>
-            </td>
+    <>
+      <Nav />
+      <table className="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Unidad de Medida</th>
+            <th>Cantidad</th>
+            <th>Proveedor</th>
+            <th>Acciones</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {products.map((product, index) => (
+            <tr key={product.id}>
+              <td>{product.id}</td>
+              <td>
+                <input
+                  className="input"
+                  type="text"
+                  value={product.name}
+                  onChange={(e) =>
+                    handleProductUpdate(index, {
+                      ...product,
+                      name: e.target.value,
+                    })
+                  }
+                />
+              </td>
+              <td>
+                <input
+                  className="input"
+                  type="number"
+                  value={product.price}
+                  onChange={(e) =>
+                    handleProductUpdate(index, {
+                      ...product,
+                      price: parseFloat(e.target.value),
+                    })
+                  }
+                />
+              </td>
+              <td>
+                <select
+                  className="input"
+                  value={product.measure}
+                  onChange={(e) =>
+                    handleProductUpdate(index, {
+                      ...product,
+                      measure: e.target.value, // Actualiza el valor de measure
+                    })
+                  }
+                >
+                  <option value="kg">Kilogramos</option>
+                  <option value="lb">Libra</option>
+                  <option value="l">Litros</option>
+                  <option value="ml">Mililitros</option>
+                  <option value="unidad">Unidad</option>                  
+                </select>
+              </td>
+              <td>
+                <input
+                  className="input"
+                  type="number"
+                  value={product.quantity}
+                  onChange={(e) =>
+                    handleProductUpdate(index, {
+                      ...product,
+                      quantity: parseInt(e.target.value),
+                    })
+                  }
+                />
+              </td>
+              <td>
+                <input
+                  className="input"
+                  type="text"
+                  value={product.provider}
+                  onChange={(e) =>
+                    handleProductUpdate(index, {
+                      ...product,
+                      provider: e.target.value,
+                    })
+                  }
+                />
+              </td>
+              <td>
+                <button
+                  className="button"
+                >
+                  {" "}
+                  <Save xlinkTitle="Guardar" />
+                </button>
+                <button 
+                className='button'
+                 onClick={() => handleEditProduct(products[index])}> 
+                  {" "}
+                  <FilePen xlinkTitle="Editar"/> 
+                </button>
+                <button className="button" 
+                onClick={() => handleDeleteProduct(index)}>
+                  {" "}
+                  <Trash2 xlinkTitle="Borrar"/>
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
   );
 };
 

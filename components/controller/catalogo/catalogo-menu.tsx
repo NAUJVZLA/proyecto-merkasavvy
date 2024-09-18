@@ -11,7 +11,6 @@ import { Suspense } from "react";
 
 export default function MenuP() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
       <div className="max-w-[900px] gap-2 grid grid-cols-12 grid-rows-2 px-8">
         <Card className="col-span-12 sm:col-span-4 h-[300px]">
           <CardHeader className="absolute z-10 top-1 flex-col !items-start">
@@ -118,7 +117,7 @@ export default function MenuP() {
               <div className="flex flex-col">
                 <p className="text-tiny text-white/60">Breathing App</p>
                 <p className="text-tiny text-white/60">
-                  Get a good night's sleep.
+                  Get a good nights sleep.
                 </p>
               </div>
             </div>
@@ -128,6 +127,5 @@ export default function MenuP() {
           </CardFooter>
         </Card>
       </div>
-    </Suspense>
   );
 }
