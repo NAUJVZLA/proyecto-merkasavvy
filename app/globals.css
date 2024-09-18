@@ -206,3 +206,251 @@
 .button:hover {
   background-color: #45a049;
 }
+
+/* estylos de information page  */
+/* Estilos generales para el contenedor */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f8fc; /* Fondo gris claro */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Títulos principales */
+h2 {
+  font-size: 24px;
+  color: #3b3b3b; /* Gris oscuro */
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Resumen de gastos (Gasto Total y botón) */
+.summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.summary h3 {
+  font-size: 20px;
+  color: #4a4a4a; /* Gris medio */
+}
+
+button {
+  background-color: #5a55ff; /* Azul similar al botón de Sign In */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4a48d6; /* Un tono más oscuro al hacer hover */
+}
+
+/* Estilos para la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+thead th {
+  background-color: #5a55ff; /* Azul para el encabezado */
+  color: white;
+  padding: 12px;
+  font-weight: normal;
+  text-align: left;
+}
+
+tbody td {
+  background-color: white; /* Blanco para las filas */
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #3b3b3b; /* Texto gris oscuro */
+}
+
+/* Estilo para las filas al hacer hover */
+tbody tr:hover {
+  background-color: #f1f1f1; /* Un gris muy claro al hacer hover */
+}
+
+/* Añade bordes redondeados al inicio y final de la tabla */
+thead th:first-child {
+  border-top-left-radius: 8px;
+}
+
+thead th:last-child {
+  border-top-right-radius: 8px;
+}
+
+tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .summary h3 {
+    font-size: 18px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+}
+
+/* vista de  presupuesto  */
+
+/* Estilos generales para el contenedor */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f8fc; /* Fondo gris claro */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Títulos principales */
+h2 {
+  font-size: 24px;
+  color: #3b3b3b; /* Gris oscuro */
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Subtítulo */
+h3 {
+  font-size: 20px;
+  color: #3b3b3b; /* Gris oscuro */
+  margin-bottom: 15px;
+}
+
+/* Estilos para la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+thead th {
+  background-color: #28a745; /* Verde usado en el login */
+  color: white;
+  padding: 12px;
+  font-weight: normal;
+  text-align: left;
+}
+
+tbody td {
+  background-color: white; /* Blanco para las filas */
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #3b3b3b; /* Texto gris oscuro */
+}
+
+/* Estilo para las filas al hacer hover */
+tbody tr:hover {
+  background-color: #f1f1f1; /* Un gris muy claro al hacer hover */
+}
+
+/* Añade bordes redondeados al inicio y final de la tabla */
+thead th:first-child {
+  border-top-left-radius: 8px;
+}
+
+thead th:last-child {
+  border-top-right-radius: 8px;
+}
+
+tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}
+
+/* Estilos para los inputs */
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  box-sizing: border-box;
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #28a745; /* Verde del login */
+}
+
+/* Estilos para el botón */
+button {
+  background-color: #28a745; /* Verde similar al del login */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+  display: block;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #218838; /* Un tono más oscuro de verde al hacer hover */
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}

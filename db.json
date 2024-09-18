@@ -98,6 +98,12 @@
       "email": "jhonmore@gmail.com",
       "password": "1",
       "name": "jhon more"
+    },
+    {
+      "id": "16ea",
+      "email": "hola@gmail.com",
+      "password": "1",
+      "name": "hola"
     }
   ],
   "productos": [
