@@ -7,57 +7,60 @@ import {
   ModalFooter,
   Button,
   useDisclosure,
-  Checkbox,
   Input,
   Link,
 } from "@nextui-org/react";
+import {
+  Folder,
+  FolderPen,
+  FolderPenIcon,
+  ListCheck,
+  Tags,
+  ScanBarcode,
+} from "lucide-react";
 
-export default function Botonadd() {
+export default function App() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
     <>
       <label onClick={onOpen} color="primary">
-        hools
+        <ListCheck />
       </label>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">Log in</ModalHeader>
+              <ModalHeader className="flex flex-col gap-1">
+                Create List
+              </ModalHeader>
               <ModalBody>
                 <Input
+                  endContent={<FolderPenIcon />}
                   autoFocus
-                  endContent
-                  label="Email"
-                  placeholder="Enter your email"
+                  label="List | Name"
+                  placeholder="Enter the name of the list"
                   variant="bordered"
                 />
                 <Input
-                  label="Password"
-                  placeholder="Enter your password"
-                  type="password"
+                  endContent={<ScanBarcode />}
+                  label="Description"
+                  placeholder="Enter a description for the list"
                   variant="bordered"
                 />
-                <div className="flex py-2 px-1 justify-between">
-                  <Checkbox
-                    classNames={{
-                      label: "text-small",
-                    }}
-                  >
-                    Remember me
-                  </Checkbox>
-                  <Link color="primary" href="#" size="sm">
-                    Forgot password?
-                  </Link>
-                </div>
+                <Input
+                  endContent={<Tags />}
+                  label="Tags (optional)"
+                  placeholder="Add tags separated by commas"
+                  variant="bordered"
+                />
               </ModalBody>
               <ModalFooter>
-                <Button color="danger" variant="flat" onPress={onClose}>
-                  Close
+                <Button color="success" variant="flat" onPress={onClose}>
+                  Cancel
                 </Button>
-                <Button color="primary" onPress={onClose}>
-                  Sign in
+                <Button color="success" onPress={onClose}>
+                  Create List
                 </Button>
               </ModalFooter>
             </>
