@@ -5,10 +5,10 @@ import { PlusCircle, List, BarChart2, Calculator } from "lucide-react";
 import Nav from "../navGeneral/page";
 
 // Carga dinámica de las secciones
-const CreateList = dynamic(() => import("@/components/CreateList"), {
+const CreateList = dynamic(() => import(""), {
   suspense: true,
 });
-const ViewLists = dynamic(() => import("@/components/ViewLists"), {
+const ViewLists = dynamic(() => import(""), {
   suspense: true,
 });
 const PurchaseSummary = dynamic(() => import(""), {
