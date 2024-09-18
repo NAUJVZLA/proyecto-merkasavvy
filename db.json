@@ -1,52 +1,52 @@
 {
   "usuarios": [
     {
-      "id": 1,
-      "password": "contraseña1",
+      "id": "1",
+      "password": "1",
       "email": "juan.perez@example.com"
     },
     {
-      "id": 2,
+      "id": "2",
       "password": "contraseña2",
       "email": "maria.lopez@example.com"
     },
     {
-      "id": 3,
+      "id": "3",
       "password": "contraseña3",
       "email": "carlos.garcia@example.com"
     },
     {
-      "id": 4,
+      "id": "4",
       "password": "1",
       "email": "ana.martinez@example.com"
     },
     {
-      "id": 5,
-      "password": "contraseña5",
+      "id": "5",
+      "password": "1",
       "email": "luis.fernandez@example.com"
     },
     {
-      "id": 6,
-      "password": "contraseña6",
+      "id": "6",
+      "password": "1",
       "email": "laura.sanchez@example.com"
     },
     {
-      "id": 7,
+      "id": "7",
       "password": "contraseña7",
       "email": "jorge.ramirez@example.com"
     },
     {
-      "id": 8,
+      "id": "8",
       "password": "contraseña8",
       "email": "sofia.torres@example.com"
     },
     {
-      "id": 9,
+      "id": "9",
       "password": "contraseña9",
       "email": "diego.morales@example.com"
     },
     {
-      "id": 10,
+      "id": "10",
       "password": "contraseña10",
       "email": "clara.jimenez@example.com"
     },
@@ -64,59 +64,93 @@
       "id": "fe35",
       "email": "ana.martinez@example.com",
       "password": "1"
+    },
+    {
+      "id": "9274",
+      "email": "kevin@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "0082",
+      "email": "ju4nc4r1d4d@gmail.com",
+      "password": "1"
+    },
+    {
+      "id": "a117",
+      "email": "kevin.rodas.cuartas@gmail.com",
+      "password": "123456",
+      "name": "Kevin Rodas Cuartas"
+    },
+    {
+      "id": "746a",
+      "email": "edwin@gmail.com",
+      "password": "123456",
+      "name": "Edwin"
+    },
+    {
+      "id": "e49b",
+      "email": "ramirito@gmail.com",
+      "password": "1",
+      "name": "ramiro"
+    },
+    {
+      "id": "7cb2",
+      "email": "jhonmore@gmail.com",
+      "password": "1",
+      "name": "jhon more"
     }
   ],
   "productos": [
     {
-      "id": 1,
-      "name": "Producto A",
-      "price": 10.99,
-      "measure": "kg",
-      "quantity": 100,
-      "provider": "Proveedor A"
+      "id": "1",
+      "name": "Arroz",
+      "price": 2500,
+      "measure": "lb",
+      "quantity": 2,
+      "provider": "D1"
     },
     {
-      "id": 2,
-      "name": "Producto B",
-      "price": 15.49,
-      "measure": "kg",
-      "quantity": 50,
-      "provider": "Proveedor B"
+      "id": "2",
+      "name": "Frijol",
+      "price": 5000,
+      "measure": "lb",
+      "quantity": 4,
+      "provider": "Exito"
     },
     {
-      "id": 3,
-      "name": "Producto C",
-      "price": 7.99,
-      "measure": "kg",
-      "quantity": 200,
-      "provider": "Proveedor C"
+      "id": "3",
+      "name": "Arepas",
+      "price": 2000,
+      "measure": "unidad",
+      "quantity": 3,
+      "provider": "Ara"
     },
     {
-      "id": 4,
-      "name": "Producto D",
-      "price": 20,
-      "measure": "kg",
-      "quantity": 30,
-      "provider": "Proveedor D"
+      "id": "4",
+      "name": "Chocolisto",
+      "price": 5500,
+      "measure": "unidad",
+      "quantity": 2,
+      "provider": "D1"
     },
     {
-      "id": 5,
-      "name": "Producto E",
-      "price": 5.75,
-      "measure": "kg",
-      "quantity": 150,
-      "provider": "Proveedor E"
+      "id": "5",
+      "name": "chocorramo",
+      "price": 2500,
+      "measure": "unidad",
+      "quantity": 10,
+      "provider": "Carulla"
     },
     {
-      "id": 6,
-      "name": "Producto F",
-      "price": 12.3,
-      "measure": "kg",
-      "quantity": 80,
-      "provider": "Proveedor F"
+      "id": "6",
+      "name": "huevos canasta",
+      "price": 15000,
+      "measure": "unidad",
+      "quantity": 1,
+      "provider": "D1"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Producto G",
       "price": 8.99,
       "measure": "kg",
@@ -124,7 +158,7 @@
       "provider": "Proveedor G"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Producto H",
       "price": 14.99,
       "measure": "kg",
@@ -132,7 +166,7 @@
       "provider": "Proveedor H"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Producto I",
       "price": 9.5,
       "measure": "kg",
@@ -140,12 +174,20 @@
       "provider": "Proveedor I"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Producto J",
       "price": 11.25,
       "measure": "kg",
       "quantity": 70,
       "provider": "Proveedor J"
+    },
+    {
+      "id": "11",
+      "name": "Aceite",
+      "price": 8500,
+      "measure": "l",
+      "quantity": 4,
+      "provider": "Carulla"
     }
   ]
 }

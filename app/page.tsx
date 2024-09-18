@@ -1,5 +1,10 @@
-import { h1 } from "framer-motion/client";
 
-export default function App() {
-  return <h1>Hello CodeSandbox</h1>;
+import LoginComponent from "./login/page";
+
+function App() {
+  return(
+    <LoginComponent />
+  ) 
 }
+
+export default App
