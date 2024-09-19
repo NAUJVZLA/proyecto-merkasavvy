@@ -22,6 +22,7 @@ import {
   SignInButton,
   SignInLink
 } from '../../components/style/Login-Register-Styles';
+import { ToastContainer, toast } from "react-toastify";
 
 const RegisterComponent: React.FC = () => {
   const [email, setEmail] = useState(""); // Estado para almacenar el email
@@ -33,7 +34,10 @@ const RegisterComponent: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => { // Función para manejar el envío del formulario
     e.preventDefault(); // Previene el comportamiento por defecto del formulario
     if (!email || !password) {
-      alert("debes diligenciar todos los datos")
+      toast.error("Debes Llenar Los Campos", {
+        position: "top-right",
+        autoClose: 3000,
+      });
       return
     }
     const fetchData = async () => {
@@ -58,6 +62,7 @@ const RegisterComponent: React.FC = () => {
   return (
     <>
       <Nav />
+
       <ContenedorLoginRegister>
         <LoginForm >
           <SignUpH2 >MerkaSavvy</SignUpH2>
@@ -123,6 +128,7 @@ const RegisterComponent: React.FC = () => {
             <Logoregister />
           </div>
         </GreenBackground>
+        <ToastContainer />
       </ContenedorLoginRegister>
     </>
   );
