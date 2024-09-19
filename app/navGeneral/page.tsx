@@ -21,7 +21,8 @@ import {
   Scale,
 } from "../../components/types/icons/iconos-nav";
 import { MerkaSavvy } from "../../components/types/svg/logo";
-import {useRouter} from "next/navigation"
+import { useRouter } from "next/navigation"
+import { ThemeSwitcher } from "@/components/controller/ThemeSwitcher";
 
 export default function NavigatorComponent() {
   const icons = {
@@ -36,15 +37,14 @@ export default function NavigatorComponent() {
     user: <TagUser className="text-danger" fill="currentColor" size={30} />,
   };
 
- 
   const router = useRouter()
 
-  const handleLogout = () =>{
+  const handleLogout = () => {
     sessionStorage.removeItem('token')
     router.push('/login')
   }
 
-  
+
 
 
   return (
@@ -57,9 +57,10 @@ export default function NavigatorComponent() {
       </NavbarBrand>
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button color="primary" variant="flat" onClick ={handleLogout}>
-          Log Out
+          <Button color="primary" variant="flat" onClick={handleLogout}>
+            Log Out
           </Button>
+          <ThemeSwitcher />
         </NavbarItem>
       </NavbarContent>
     </Navbar>

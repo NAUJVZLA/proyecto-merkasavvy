@@ -104,6 +104,18 @@
       "email": "hola@gmail.com",
       "password": "1",
       "name": "hola"
+    },
+    {
+      "id": "bea5",
+      "email": "holaatodos@gmaicl.com",
+      "password": "1",
+      "name": "holaatodos"
+    },
+    {
+      "id": "4ffe",
+      "email": "9999@gmai.com",
+      "password": "1",
+      "name": "9999"
     }
   ],
   "productos": [

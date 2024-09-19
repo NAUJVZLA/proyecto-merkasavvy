@@ -8,6 +8,22 @@ import Logologin from "@/components/types/icons/logo-login"; // Importa un compo
 import { ToastContainer, toast } from "react-toastify"; // Importa ToastContainer y toast
 import "react-toastify/dist/ReactToastify.css"; // Importa estilos de react-toastify
 import Nav from "../navInitial/page"
+import {
+  ContenedorLoginRegister,
+  LoginForm,
+  GreenBackground,
+  Tituloh1,
+  WelcomeBack,
+  SignUpH2,
+  InputGroup,
+  InputsLabels,
+  InputWithIcon,
+  Inputs,
+  Icon,
+  ForgotPassword,
+  SignInButton,
+  SignInLink
+} from '../../components/style/Login-Register-Styles';
 
 
 
@@ -54,57 +70,63 @@ const LoginComponent: React.FC = () => {
   return (
     // Renderiza el componente
     <>
-    <Nav/>
-    <div className="login-container">
-      <div className="login-form">
-        <h2 className="app-name">MerkaSavvy</h2>
-        <p className="welcome-back">Welcome back !!!</p>
-        <h1 className="sign-up">Sign in</h1>
-        <form id="animation" onSubmit={handleSubmit}>
-          <div className="input-group">
-            <label htmlFor="email">Email</label>
-            <div className="input-with-icon">
-              <input
-                type="email"
-                id="email"
-                placeholder="test@gmail.com"
-                value={email} // Valor del input vinculado al estado email
-                onChange={(e) => setEmail(e.target.value)} // Actualiza el estado email al cambiar
-              />
-              <User id="user" className="icon" size={20} />
-            </div>
+      <Nav />
+      <ContenedorLoginRegister >
+        <LoginForm >
+          <SignUpH2 >MerkaSavvy</SignUpH2>
+          <WelcomeBack >Welcome back !!!</WelcomeBack>
+          <Tituloh1>Sign in</Tituloh1>
+          <form id="animation" onSubmit={handleSubmit}>
+            <InputGroup>
+              <InputsLabels htmlForm="email">Email</InputsLabels>
+              <InputWithIcon>
+                <Inputs
+                  type="email"
+                  id="email"
+                  placeholder="test@gmail.com"
+                  value={email} // Valor del input vinculado al estado email
+                  onChange={(e) => setEmail(e.target.value)} // Actualiza el estado email al cambiar
+                />
+                <Icon>
+                  <User id="user" className="icon" size={20} />
+                </Icon>
+
+              </InputWithIcon>
+            </InputGroup>
+            <InputGroup>
+              <InputsLabels htmlForm="password">Password</InputsLabels>
+              <InputWithIcon >
+                <Inputs
+                  type="password"
+                  id="password"
+                  placeholder="••••••••"
+                  value={password} // Valor del input vinculado al estado password
+                  onChange={(e) => setPassword(e.target.value)} // Actualiza el estado password al cambiar
+                />
+                <Icon>
+                  <Lock id="candado" className="icon" size={20} />
+                </Icon>
+              </InputWithIcon>
+              <ForgotPassword href="#">
+                Forgot Password?
+              </ForgotPassword>
+            </InputGroup>
+            <SignInButton type="submit" >
+              SIGN IN →
+            </SignInButton>
+          </form>
+
+          <Link className="sign-in-link" href="register">
+            I dont have an account? Sign Up
+          </Link>
+        </LoginForm>
+        <GreenBackground >
+          <div className="vector-container">
+            <Logologin />
           </div>
-          <div className="input-group">
-            <label htmlFor="password">Password</label>
-            <div className="input-with-icon">
-              <input
-                type="password"
-                id="password"
-                placeholder="••••••••"
-                value={password} // Valor del input vinculado al estado password
-                onChange={(e) => setPassword(e.target.value)} // Actualiza el estado password al cambiar
-              />
-              <Lock id="candado" className="icon" size={20} />
-            </div>
-            <a href="#" className="forgot-password">
-              Forgot Password?
-            </a>
-          </div>
-          <button type="submit" className="sign-in-button">
-            SIGN IN →
-          </button>
-        </form>
-        <Link className="sign-in-link" href="register">
-          I dont have an account? Sign Up
-        </Link>
-      </div>
-      <div className="green-background">
-        <div className="vector-container">
-          <Logologin />
-        </div>
-      </div>
-      <ToastContainer /> {/* Contenedor de las notificaciones */}
-    </div>
+        </GreenBackground>
+        <ToastContainer /> {/* Contenedor de las notificaciones */}
+      </ContenedorLoginRegister >
     </>
   );
 };

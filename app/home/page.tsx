@@ -2,10 +2,12 @@
 import React from "react";
 import { useEffect } from "react";
 import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Nav from "../navGeneral/page";
 import ModalBudget from "@/components/controller/modal-budge";
+import router from "next/navigation";
+import { ThemeSwitcher } from "@/components/controller/ThemeSwitcher";
+
 
 export default function PageHome() {
   //const router = useRouter();
@@ -23,8 +25,8 @@ export default function PageHome() {
       <h1>
         <b>Bienvenido {token}</b>
       </h1>
-      <div className="gap-2 grid grid-cols-2 sm:grid-cols-4">
-        <Card shadow="sm">
+      <div className="gap-4 grid grid-cols-2 sm:grid-cols-2 ">
+        <Card shadow="sm" >
           <CardBody className="overflow-visible p-0">
             <Image
               shadow="sm"
