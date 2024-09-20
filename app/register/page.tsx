@@ -34,14 +34,14 @@ const RegisterComponent: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => { // Función para manejar el envío del formulario
     e.preventDefault(); // Previene el comportamiento por defecto del formulario
     if (!email || !password) {
-      toast.error("Debes Llenar Los Campos", {
+      toast.error("You must fill all fields", {
         position: "top-right",
         autoClose: 3000,
       });
       return
     }
     const fetchData = async () => {
-      const response = await fetch("http://localhost:5000/usuarios", { // Cambia la URL si es necesario
+      const response = await fetch("http://localhost:5000/customers/register", { // Cambia la URL si es necesario
         method: "POST", // Método POST para enviar datos
         headers: {
           "Content-Type": "application/json", // Indica el tipo de contenido
@@ -49,11 +49,13 @@ const RegisterComponent: React.FC = () => {
         body: JSON.stringify({ email, password, name }), // Convierte el objeto a JSON
       });
 
+      const resToJson = await response.json()
+      console.log(resToJson)
       setEmail(""); // Limpia el campo de email
       setPassword(""); // Limpia el campo de contraseña
       setName("");
 
-      alert("Cuenta creada")
+      alert("Account successfully created!")
       router.push('/login')
     };
     await fetchData();
@@ -66,7 +68,7 @@ const RegisterComponent: React.FC = () => {
       <ContenedorLoginRegister>
         <LoginForm >
           <SignUpH2 >MerkaSavvy</SignUpH2>
-          <WelcomeBack >Welcome !!!</WelcomeBack>
+          <WelcomeBack >Welcome !</WelcomeBack>
           <Tituloh1 >Sign up</Tituloh1>
           <form id="animation" onSubmit={handleSubmit}>
             <InputGroup >
@@ -120,7 +122,7 @@ const RegisterComponent: React.FC = () => {
             </SignInButton>
           </form>
           <Link className="sign-in-link" href="login">
-            I have an account? Sign In
+            I have an account? Log In
           </Link>
         </LoginForm>
         <GreenBackground >
