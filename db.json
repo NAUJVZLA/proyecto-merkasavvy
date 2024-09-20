@@ -3,101 +3,60 @@
     {
       "id": "1",
       "password": "1",
-      "email": "juan.perez@example.com"
+      "email": "1@gmail.com"
     },
     {
       "id": "2",
-      "password": "contraseña2",
-      "email": "maria.lopez@example.com"
+      "password": "2",
+      "email": "2@gmail.com"
     },
     {
-      "id": "3",
-      "password": "contraseña3",
-      "email": "carlos.garcia@example.com"
+      "id": "198f",
+      "email": "3@gmail.com",
+      "password": "3",
+      "name": "3"
     },
     {
-      "id": "4",
+      "id": "dca6",
+      "email": "3@gmail.com",
+      "password": "3",
+      "name": "3"
+    },
+    {
+      "id": "1331",
+      "email": "hola@gmail.com",
       "password": "1",
-      "email": "ana.martinez@example.com"
+      "name": "3"
     },
     {
-      "id": "5",
+      "id": "c480",
+      "email": "3@gmail.com",
+      "password": "3",
+      "name": "3"
+    },
+    {
+      "id": "0b50",
+      "email": "3@gmail.com",
+      "password": "3",
+      "name": "3"
+    },
+    {
+      "id": "bf4c",
+      "email": "3@gmail.com",
+      "password": "3",
+      "name": "3"
+    },
+    {
+      "id": "01e0",
+      "email": "3@gmail.com",
+      "password": "3",
+      "name": "3"
+    },
+    {
+      "id": "e3b3",
+      "email": "juan@gmail.com",
       "password": "1",
-      "email": "luis.fernandez@example.com"
-    },
-    {
-      "id": "6",
-      "password": "1",
-      "email": "laura.sanchez@example.com"
-    },
-    {
-      "id": "7",
-      "password": "contraseña7",
-      "email": "jorge.ramirez@example.com"
-    },
-    {
-      "id": "8",
-      "password": "contraseña8",
-      "email": "sofia.torres@example.com"
-    },
-    {
-      "id": "9",
-      "password": "contraseña9",
-      "email": "diego.morales@example.com"
-    },
-    {
-      "id": "10",
-      "password": "contraseña10",
-      "email": "clara.jimenez@example.com"
-    },
-    {
-      "id": "572d",
-      "email": "ana.martinez@example.com",
-      "password": "1"
-    },
-    {
-      "id": "46d4",
-      "email": "ana.martinez@example.com",
-      "password": "1"
-    },
-    {
-      "id": "fe35",
-      "email": "ana.martinez@example.com",
-      "password": "1"
-    },
-    {
-      "id": "9274",
-      "email": "kevin@gmail.com",
-      "password": "123456"
-    },
-    {
-      "id": "0082",
-      "email": "ju4nc4r1d4d@gmail.com",
-      "password": "1"
-    },
-    {
-      "id": "a117",
-      "email": "kevin.rodas.cuartas@gmail.com",
-      "password": "123456",
-      "name": "Kevin Rodas Cuartas"
-    },
-    {
-      "id": "746a",
-      "email": "edwin@gmail.com",
-      "password": "123456",
-      "name": "Edwin"
-    },
-    {
-      "id": "e49b",
-      "email": "ramirito@gmail.com",
-      "password": "1",
-      "name": "ramiro"
-    },
-    {
-      "id": "7cb2",
-      "email": "jhonmore@gmail.com",
-      "password": "1",
-      "name": "jhon more"
+      "name": "Juan Carlos"
     }
   ],
   "productos": [
@@ -105,7 +64,7 @@
       "id": "1",
       "name": "Arroz",
       "price": 2500,
-      "measure": "lb",
+      "measure": "l",
       "quantity": 2,
       "provider": "D1"
     },

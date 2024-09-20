@@ -2,7 +2,9 @@
 import React, { useState, useEffect } from "react";
 import Product from "@/app/interface/table-products";
 import { Trash2, Save, FilePen } from "lucide-react"; // Cambiar 'file-pen-line' a 'FilePen'
-import Nav from "../navGeneral/page";
+import NavigatorGeneral from "../navGeneral/page";
+import { Inputs } from "@/components/style/Login-Register-Styles";
+import { Button } from "@nextui-org/react";
 
 const ProductTable: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -48,14 +50,14 @@ const ProductTable: React.FC = () => {
     }
   };
 
-  
+
 
   const handleEditProduct = (product: Product) => {
     if (!product.name || !product.price || !product.measure || !product.quantity || !product.provider) {
-      alert("Por favor, diligencie todos los datos del producto."); 
-      return; 
+      alert("Por favor, diligencie todos los datos del producto.");
+      return;
     }
-    setSavedProducts((prev) => [...prev, product]); 
+    setSavedProducts((prev) => [...prev, product]);
   };
 
   const handleDeleteProduct = (index: number) => {
@@ -64,11 +66,11 @@ const ProductTable: React.FC = () => {
     setProducts(updatedProducts);
   };
 
-  
+
 
   return (
     <>
-      <Nav />
+      <NavigatorGeneral />
       <table className="table">
         <thead>
           <tr>
@@ -86,7 +88,7 @@ const ProductTable: React.FC = () => {
             <tr key={product.id}>
               <td>{product.id}</td>
               <td>
-                <input
+                <Inputs
                   className="input"
                   type="text"
                   value={product.name}
@@ -99,7 +101,7 @@ const ProductTable: React.FC = () => {
                 />
               </td>
               <td>
-                <input
+                <Inputs
                   className="input"
                   type="number"
                   value={product.price}
@@ -126,11 +128,11 @@ const ProductTable: React.FC = () => {
                   <option value="lb">Libra</option>
                   <option value="l">Litros</option>
                   <option value="ml">Mililitros</option>
-                  <option value="unidad">Unidad</option>                  
+                  <option value="unidad">Unidad</option>
                 </select>
               </td>
               <td>
-                <input
+                <Inputs
                   className="input"
                   type="number"
                   value={product.quantity}
@@ -143,7 +145,7 @@ const ProductTable: React.FC = () => {
                 />
               </td>
               <td>
-                <input
+                <Inputs
                   className="input"
                   type="text"
                   value={product.provider}
@@ -156,23 +158,23 @@ const ProductTable: React.FC = () => {
                 />
               </td>
               <td>
-                <button
+                <Button
                   className="button"
                 >
                   {" "}
                   <Save xlinkTitle="Guardar" />
-                </button>
-                <button 
-                className='button'
-                 onClick={() => handleEditProduct(products[index])}> 
+                </Button>
+                <Button
+                  className='button'
+                  onClick={() => handleEditProduct(products[index])}>
                   {" "}
-                  <FilePen xlinkTitle="Editar"/> 
-                </button>
-                <button className="button" 
-                onClick={() => handleDeleteProduct(index)}>
+                  <FilePen xlinkTitle="Editar" />
+                </Button>
+                <Button className="button"
+                  onClick={() => handleDeleteProduct(index)}>
                   {" "}
-                  <Trash2 xlinkTitle="Borrar"/>
-                </button>
+                  <Trash2 xlinkTitle="Borrar" />
+                </Button>
               </td>
             </tr>
           ))}

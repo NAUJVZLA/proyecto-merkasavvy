@@ -21,9 +21,15 @@ import {
   Scale,
 } from "../../components/types/icons/iconos-nav";
 import { MerkaSavvy } from "../../components/types/svg/logo";
-import {useRouter} from "next/navigation"
+import { useRouter } from "next/navigation"
+import { ThemeSwitcher } from "@/components/controller/ThemeSwitcher";
+import { UserContainer, UserName, WelcomeMessage } from "@/components/style/User-Styles"
+import { User } from "@nextui-org/react";
+import { UserRound } from "lucide-react";
+import { ContenedorDatosNav, ContenedorLogoName } from "@/components/style/ContenedorDatosNAV";
 
-export default function NavigatorComponent() {
+export default function NavigatorGeneral() {
+  const token = sessionStorage.getItem("token");
   const icons = {
     chevron: <ChevronDown fill="currentColor" size={16} />,
     scale: <Scale className="text-warning" fill="currentColor" size={30} />,
@@ -36,31 +42,51 @@ export default function NavigatorComponent() {
     user: <TagUser className="text-danger" fill="currentColor" size={30} />,
   };
 
- 
   const router = useRouter()
 
-  const handleLogout = () =>{
+  const handleLogout = () => {
     sessionStorage.removeItem('token')
     router.push('/login')
   }
 
-  
+
 
 
   return (
     <Navbar>
-      <NavbarBrand>
-        <MerkaSavvy />
-        <Link href="home">
-          <p className="font-bold text-inherit">-MerkaSavvy</p>
-        </Link>
+      <NavbarBrand >
+
+        <ContenedorDatosNav>
+
+          <ContenedorLogoName>
+            <MerkaSavvy />
+            <Link href="home">
+              <p className="font-bold text-inherit">-MerkaSavvy</p>
+            </Link>
+          </ContenedorLogoName>
+          <UserContainer>
+            <User
+              name={token}
+              avatarProps={
+                <UserRound />
+              }
+            />
+          </UserContainer>
+
+        </ContenedorDatosNav>
+
+        <WelcomeMessage>
+          <b>Bienvenido {token}</b>
+        </WelcomeMessage>
       </NavbarBrand>
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button color="primary" variant="flat" onClick ={handleLogout}>
-          Log Out
+          <Button color="primary" variant="flat" onClick={handleLogout}>
+            Log Out
           </Button>
+
         </NavbarItem>
+        <ThemeSwitcher />
       </NavbarContent>
     </Navbar>
   );

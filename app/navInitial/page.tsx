@@ -21,6 +21,7 @@ import {
   Scale,
 } from "../../components/types/icons/iconos-nav";
 import { MerkaSavvy } from "../../components/types/svg/logo";
+import Switcher from "@/components/controller/swichtBoton/swich";
 
 export default function NavigatorComponent() {
   const icons = {
@@ -39,6 +40,9 @@ export default function NavigatorComponent() {
     <Navbar>
       <NavbarBrand>
         <MerkaSavvy />
+
+
+
         <Link href="home">
           <p className="font-bold text-inherit">-MerkaSavvy</p>
         </Link>
@@ -52,6 +56,7 @@ export default function NavigatorComponent() {
             Sign Up
           </Button>
         </NavbarItem>
+        <Switcher />
       </NavbarContent>
     </Navbar>
   );
