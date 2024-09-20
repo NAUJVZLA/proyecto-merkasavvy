@@ -13,7 +13,7 @@ export default function ModalBudget() {
 
   return (
     <>
-      <Button onPress={onOpen} color="secondary">
+      <Button onPress={onOpen} className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
         Open Modal
       </Button>
       <Modal

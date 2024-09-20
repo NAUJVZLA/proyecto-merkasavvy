@@ -1,12 +1,18 @@
 "use client";
 import React from "react";
 import { useEffect } from "react";
-import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
+import { Card, CardBody, CardFooter, Image, Button } from "@nextui-org/react";
 import Link from "next/link";
 import Nav from "../navGeneral/page";
 import ModalBudget from "@/components/controller/modal-budge";
 import router from "next/navigation";
-import { ThemeSwitcher } from "@/components/controller/ThemeSwitcher";
+import { User } from "@nextui-org/react";
+import { UserContainer, UserName, WelcomeMessage } from "@/components/style/User-Styles"
+import { ContenedorMenuPrincipal } from "../../components/style/Menu-Home"
+import { UserRound } from "lucide-react";
+import { TextoResponsivo } from "@/components/style/Text-responsivo";
+
+
 
 
 export default function PageHome() {
@@ -17,162 +23,118 @@ export default function PageHome() {
       alert("no estas autenticado, debes iniciar sesión");
       router.push("/login");
     }
-  }, []);
+  }, [token]);
 
   return (
     <>
       <Nav />
-      <h1>
+      <UserContainer>
+        <User
+          name={token}
+          avatarProps={
+            <UserRound />
+          }
+        />
+      </UserContainer>
+
+      <WelcomeMessage>
         <b>Bienvenido {token}</b>
-      </h1>
-      <div className="gap-4 grid grid-cols-2 sm:grid-cols-2 ">
-        <Card shadow="sm" >
-          <CardBody className="overflow-visible p-0">
-            <Image
-              shadow="sm"
-              radius="lg"
-              width="100%"
-              height="100%"
-              alt="icono"
-              className="w-full object-cover h-[140px]"
-              src="/assets/CREATE LIST.jpeg"
-            />
-          </CardBody>
-          <CardFooter className="text-small justify-between">
-            <b>Create List</b>
-            <Link href="/products-dashboard">
-              <button className="text-default-500">
-                Go{" "}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  className="lucide lucide-move-right"
-                >
-                  <path d="M18 8L22 12L18 16" />
-                  <path d="M2 12H22" />
-                </svg>
-              </button>
-            </Link>
+      </WelcomeMessage>
+
+      <ContenedorMenuPrincipal >
+        <Card
+          isFooterBlurred
+          radius="lg"
+          className="border-none"
+        >
+          <Image
+            alt="List of Menus"
+            className="object-cover"
+            height="auto"
+            src="/assets/CREATELIST.jpg"
+            width="auto"
+          />
+          <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+            <TextoResponsivo >Create List</TextoResponsivo>
+            <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
+              <Link href="/products-dashboard" >
+                Create List
+              </Link>
+            </Button>
           </CardFooter>
         </Card>
-        <Card shadow="sm">
-          <CardBody className="overflow-visible p-0">
-            <Image
-              shadow="sm"
-              radius="lg"
-              width="100%"
-              height="100%"
-              alt="icono"
-              className="w-full object-cover h-[140px]"
-              src="/assets/PURCHASE LIST.jpeg"
-            />
-          </CardBody>
-          <CardFooter className="text-small justify-between">
-            <b>Purchase List</b>
-            <Link href="/purchase-list">
-              <button className="text-default-500">
-                Go{" "}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  className="lucide lucide-move-right"
-                >
-                  <path d="M18 8L22 12L18 16" />
-                  <path d="M2 12H22" />
-                </svg>
-              </button>
-            </Link>
+
+        <Card
+          isFooterBlurred
+          radius="lg"
+          className="border-none"
+        >
+          <Image
+            alt="List of Menus"
+            className="object-cover"
+            height="auto"
+            src="/assets/1PURCHASE LIST.jpg"
+            width="auto"
+          />
+          <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+            <TextoResponsivo >Purchase List</TextoResponsivo>
+            <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
+              <Link href="/purchase-list">
+                Create List
+              </Link>
+            </Button>
           </CardFooter>
         </Card>
-        <Card shadow="sm">
-          <CardBody className="overflow-visible p-0">
-            <Image
-              shadow="sm"
-              radius="lg"
-              width="100%"
-              height="100%"
-              alt="icono"
-              className="w-full object-cover h-[140px]"
-              src="/assets/BUDGET.jpeg"
-            />
-          </CardBody>
-          <CardFooter className="text-small justify-between">
-            <b>Budget</b>
-            {/* <Link href="/budget">
-              <button className="text-default-500">
-                {" "}
-               {" "}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  className="lucide lucide-move-right"
-                >
-                  <path d="M18 8L22 12L18 16" />
-                  <path d="M2 12H22" />
-                </svg>
-              </button>
-            </Link> */}
-            <ModalBudget />
+
+        <Card
+          isFooterBlurred
+          radius="lg"
+          className="border-none"
+        >
+          <Image
+            alt="List of Menus"
+            className="object-cover"
+            height="auto"
+            src="/assets/budget.jpg"
+            width="auto"
+          />
+          <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+            <TextoResponsivo >Budget</TextoResponsivo>
+            <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
+
+              <ModalBudget />
+
+            </Button>
           </CardFooter>
         </Card>
-        <Card shadow="sm">
-          <CardBody className="overflow-visible p-0">
-            <Image
-              shadow="sm"
-              radius="lg"
-              width="100%"
-              height="100%"
-              alt="icono"
-              className="w-full object-cover h-[140px]"
-              src="/assets/INFORMATION.jpeg"
-            />
-          </CardBody>
-          <CardFooter className="text-small justify-between">
-            <Link href="/information">
-              <b>Information</b>
-              <button className="text-default-500">
-                Go{" "}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  className="lucide lucide-move-right"
-                >
-                  <path d="M18 8L22 12L18 16" />
-                  <path d="M2 12H22" />
-                </svg>
-              </button>
-            </Link>
+
+
+
+
+
+        <Card
+          isFooterBlurred
+          radius="lg"
+          className="border-none"
+        >
+          <Image
+            alt="List of Menus"
+            className="object-cover"
+            height="auto"
+            src="/assets/information.jpg"
+            width="auto"
+          />
+          <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+            <TextoResponsivo >Information</TextoResponsivo>
+            <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
+
+              <ModalBudget />
+
+            </Button>
           </CardFooter>
         </Card>
-      </div>
+
+      </ContenedorMenuPrincipal>
     </>
   );
 }

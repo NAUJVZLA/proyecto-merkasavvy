@@ -51,6 +51,12 @@
       "email": "3@gmail.com",
       "password": "3",
       "name": "3"
+    },
+    {
+      "id": "e3b3",
+      "email": "juan@gmail.com",
+      "password": "1",
+      "name": "Juan Carlos"
     }
   ],
   "productos": [
@@ -58,7 +64,7 @@
       "id": "1",
       "name": "Arroz",
       "price": 2500,
-      "measure": "lb",
+      "measure": "l",
       "quantity": 2,
       "provider": "D1"
     },

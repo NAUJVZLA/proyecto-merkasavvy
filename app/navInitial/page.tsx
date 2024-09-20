@@ -40,6 +40,9 @@ export default function NavigatorComponent() {
     <Navbar>
       <NavbarBrand>
         <MerkaSavvy />
+
+
+
         <Link href="home">
           <p className="font-bold text-inherit">-MerkaSavvy</p>
         </Link>

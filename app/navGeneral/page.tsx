@@ -60,8 +60,9 @@ export default function NavigatorComponent() {
           <Button color="primary" variant="flat" onClick={handleLogout}>
             Log Out
           </Button>
-          <ThemeSwitcher />
+
         </NavbarItem>
+        <ThemeSwitcher />
       </NavbarContent>
     </Navbar>
   );

@@ -89,14 +89,14 @@
   border-radius: 4px;
 }
 
-.button {
+/* .button {
   padding: 8px 16px;
   background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-}
+} */
 
 .button:hover {
   background-color: #45a049;
@@ -139,7 +139,7 @@ h2 {
   /* Gris medio */
 }
 
-button {
+buttson {
   background-color: #5a55ff;
   /* Azul similar al botón de Sign In */
   color: white;
@@ -276,10 +276,10 @@ tbody td {
   padding: 12px;
   border-bottom: 1px solid #e0e0e0;
   color: #3b3b3b;
-  /* Texto gris oscuro */
+
 }
 
-/* Estilo para las filas al hacer hover */
+
 tbody tr:hover {
   background-color: #f1f1f1;
   /* Un gris muy claro al hacer hover */
@@ -323,10 +323,9 @@ input[type="number"]:focus {
   /* Verde del login */
 }
 
-/* Estilos para el botón */
+/* Estilos para el botón
 button {
   background-color: #28a745;
-  /* Verde similar al del login */
   color: white;
   padding: 10px 20px;
   border: none;
@@ -337,9 +336,10 @@ button {
   display: block;
   width: 100%;
 }
-
+ */
 button:hover {
   background-color: #218838;
+
   /* Un tono más oscuro de verde al hacer hover */
 }
 
