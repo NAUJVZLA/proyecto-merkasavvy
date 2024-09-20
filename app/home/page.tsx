@@ -3,7 +3,7 @@ import React from "react";
 import { useEffect } from "react";
 import { Card, CardBody, CardFooter, Image, Button } from "@nextui-org/react";
 import Link from "next/link";
-import Nav from "../navGeneral/page";
+import NavigatorGeneral from "@/app/navGeneral/page";
 import ModalBudget from "@/components/controller/modal-budge";
 import router from "next/navigation";
 import { User } from "@nextui-org/react";
@@ -11,7 +11,8 @@ import { UserContainer, UserName, WelcomeMessage } from "@/components/style/User
 import { ContenedorMenuPrincipal } from "../../components/style/Menu-Home"
 import { UserRound } from "lucide-react";
 import { TextoResponsivo } from "@/components/style/Text-responsivo";
-
+import ModalPurshaseList from "@/components/controller/modal-purshaseList"
+import ModalCreateList from "@/components/controller/modal-createlist"
 
 
 
@@ -27,19 +28,7 @@ export default function PageHome() {
 
   return (
     <>
-      <Nav />
-      <UserContainer>
-        <User
-          name={token}
-          avatarProps={
-            <UserRound />
-          }
-        />
-      </UserContainer>
-
-      <WelcomeMessage>
-        <b>Bienvenido {token}</b>
-      </WelcomeMessage>
+      <NavigatorGeneral />
 
       <ContenedorMenuPrincipal >
         <Card
@@ -57,9 +46,9 @@ export default function PageHome() {
           <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
             <TextoResponsivo >Create List</TextoResponsivo>
             <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
-              <Link href="/products-dashboard" >
-                Create List
-              </Link>
+
+              Create List <ModalCreateList />
+
             </Button>
           </CardFooter>
         </Card>
@@ -79,9 +68,9 @@ export default function PageHome() {
           <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
             <TextoResponsivo >Purchase List</TextoResponsivo>
             <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
-              <Link href="/purchase-list">
-                Create List
-              </Link>
+
+              Create List   <ModalPurshaseList />
+
             </Button>
           </CardFooter>
         </Card>
