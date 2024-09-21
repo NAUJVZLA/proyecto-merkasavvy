@@ -89,17 +89,6 @@
   background-color: #45a049;
 }
 
-/* estylos de information page  */
-/* Estilos generales para el contenedor */
-/* .container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f7f8fc;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-} */
-
 /* Títulos principales */
 h2 {
   font-size: 24px;
@@ -124,7 +113,7 @@ h2 {
   /* Gris medio */
 }
 
-buttson {
+button {
   background-color: #5a55ff;
   /* Azul similar al botón de Sign In */
   color: white;
