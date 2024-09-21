@@ -2,19 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* stylos login y register */
-.sign-in-link {
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 0.875rem;
-  color: #6b7280;
-}
-
-/* .vector-container {
-  width: 400px;
-  height: 400;
-} */
-
 /* Animation Keyframes de los input del login  */
 @keyframes fadeIn {
   from {
