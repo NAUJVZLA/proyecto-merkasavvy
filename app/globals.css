@@ -104,16 +104,14 @@
 
 /* estylos de information page  */
 /* Estilos generales para el contenedor */
-.container {
+/* .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   background-color: #f7f8fc;
-  /* Fondo gris claro */
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  /* Sombra ligera */
-}
+} */
 
 /* Títulos principales */
 h2 {
@@ -224,17 +222,18 @@ tbody tr:last-child td:last-child {
 
 /* vista de  presupuesto  */
 
-/* Estilos generales para el contenedor */
-.container {
+
+/* .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   background-color: #f7f8fc;
-  /* Fondo gris claro */
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  /* Sombra ligera */
+border-radius: 10px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
 }
+
+*/
 
 /* Títulos principales */
 h2 {
@@ -317,11 +316,11 @@ input[type="number"] {
   outline: none;
 }
 
+/* 
 input[type="text"]:focus,
 input[type="number"]:focus {
   border-color: #28a745;
-  /* Verde del login */
-}
+} */
 
 /* Estilos para el botón
 button {
@@ -338,7 +337,7 @@ button {
 }
  */
 button:hover {
-  background-color: #218838;
+  /* background-color: #218838; */
 
   /* Un tono más oscuro de verde al hacer hover */
 }

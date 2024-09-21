@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation"; // Importa el hook useRouter para l
 import Logologin from "@/components/types/icons/logo-login"; // Importa un componente de logo
 import { ToastContainer, toast } from "react-toastify"; // Importa ToastContainer y toast
 import "react-toastify/dist/ReactToastify.css"; // Importa estilos de react-toastify
-import Nav from "../navInitial/page"
+import NavigatorComponent from "../navInitial/page"
 import {
   ContenedorLoginRegister,
   LoginForm,
@@ -38,7 +38,7 @@ const LoginComponent: React.FC = () => {
     e.preventDefault(); // Previene el comportamiento por defecto del formulario
 
     const fetchData = async () => {
-      const getData = await fetch("http://localhost:5000/auth/login",{
+      const getData = await fetch("http://localhost:5000/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -65,7 +65,7 @@ const LoginComponent: React.FC = () => {
           autoClose: 3000,
         });
       }
-    
+
       setEmail("");
       setPassword("");
     };
@@ -76,7 +76,7 @@ const LoginComponent: React.FC = () => {
   return (
     // Renderiza el componente
     <>
-      <Nav />
+      <NavigatorComponent />
       <ContenedorLoginRegister >
         <LoginForm >
           <SignUpH2 >MerkaSavvy</SignUpH2>

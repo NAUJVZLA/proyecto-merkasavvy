@@ -19,12 +19,12 @@ import ModalCreateList from "@/components/controller/modal-createlist"
 export default function PageHome() {
   //const router = useRouter();
   const token = sessionStorage.getItem("token");
-  useEffect(() => {
-    if (!token) {
-      alert("no estas autenticado, debes iniciar sesión");
-      router.push("/login");
-    }
-  }, [token]);
+  // useEffect(() => {
+  //   if (!token) {
+  //     alert("no estas autenticado, debes iniciar sesión");
+  //     router.push("/login");
+  //   }
+  // }, [token]);
 
   return (
     <>
