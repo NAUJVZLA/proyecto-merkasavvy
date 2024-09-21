@@ -81,7 +81,7 @@ export default function NavigatorGeneral() {
       </NavbarBrand>
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button color="primary" variant="flat" onClick={handleLogout}>
+          <Button onClick={handleLogout}>
             Log Out
           </Button>
 

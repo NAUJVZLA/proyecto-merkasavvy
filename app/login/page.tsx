@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation"; // Importa el hook useRouter para l
 import Logologin from "@/components/types/icons/logo-login"; // Importa un componente de logo
 import { ToastContainer, toast } from "react-toastify"; // Importa ToastContainer y toast
 import "react-toastify/dist/ReactToastify.css"; // Importa estilos de react-toastify
-import Nav from "../navInitial/page"
+import NavigatorComponent from "../navInitial/page"
 import {
   ContenedorLoginRegister,
   LoginForm,
@@ -38,26 +38,32 @@ const LoginComponent: React.FC = () => {
     e.preventDefault(); // Previene el comportamiento por defecto del formulario
 
     const fetchData = async () => {
-      const getData = await fetch("http://localhost:5000/usuarios"); // Espera a que se resuelva la promesa
+      const getData = await fetch("http://localhost:5000/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      }); // Espera a que se resuelva la promesa
       const data = await getData.json(); // Llama a .json() después de que se resuelva
-      const user = data.find(
-        (user: any) => user.email === email && user.password === password
-      );
+      console.log(data)
+      const user = (data.email === email && data.password === password) ? data : null;
 
-      if (user) {
-        sessionStorage.setItem('token', user.name)
+      if (getData.ok) { // Verifica si la respuesta fue exitosa
+        // Guarda el token o el identificador de usuario
+        sessionStorage.setItem('token', data.token); // Ajusta según tu respuesta
         toast.success("Login successful!", {
           position: "top-right",
           autoClose: 3000,
-        }); // Notificación de éxito
+        });
         setTimeout(() => {
-          router.push("/home"); // Navega al home después de la notificación
-        }, 3000); // Espera 3 segundos antes de redirigir
+          router.push("/home");
+        }, 3000);
       } else {
-        toast.error("Invalid credentials, please try again", {
+        toast.error(data.message || "Invalid credentials, please try again", {
           position: "top-right",
           autoClose: 3000,
-        }); // Notificación de error
+        });
       }
 
       setEmail("");
@@ -70,12 +76,12 @@ const LoginComponent: React.FC = () => {
   return (
     // Renderiza el componente
     <>
-      <Nav />
+      <NavigatorComponent />
       <ContenedorLoginRegister >
         <LoginForm >
           <SignUpH2 >MerkaSavvy</SignUpH2>
           <WelcomeBack >Welcome back !!!</WelcomeBack>
-          <Tituloh1>Sign in</Tituloh1>
+          <Tituloh1>Log in</Tituloh1>
           <form id="animation" onSubmit={handleSubmit}>
             <InputGroup>
               <InputsLabels htmlForm="email">Email</InputsLabels>

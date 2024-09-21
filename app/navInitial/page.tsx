@@ -40,9 +40,6 @@ export default function NavigatorComponent() {
     <Navbar>
       <NavbarBrand>
         <MerkaSavvy />
-
-
-
         <Link href="home">
           <p className="font-bold text-inherit">-MerkaSavvy</p>
         </Link>
@@ -52,9 +49,8 @@ export default function NavigatorComponent() {
           <Link href="/login">Login</Link>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="primary" href="/register" variant="flat">
-            Sign Up
-          </Button>
+          <Link href="/register"> Register</Link>
+
         </NavbarItem>
         <Switcher />
       </NavbarContent>

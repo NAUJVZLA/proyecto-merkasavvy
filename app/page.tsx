@@ -1,14 +1,10 @@
-
-import BotonMD from "@/components/controller/swichtBoton/swich";
 import LoginComponent from "./login/page";
 
 
-function App() {
+function HomePage() {
   return (
-    <div>
-      <LoginComponent />
-    </div>
+    <LoginComponent />
   )
 }
 
-export default App
+export default HomePage
