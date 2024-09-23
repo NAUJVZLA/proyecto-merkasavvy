@@ -1,63 +1,132 @@
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Button,
-  useDisclosure,
-} from "@nextui-org/react";
-import BudgetPage from "@/app/budget/page";
-export default function ModalBudget() {
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
+
+import React, { useEffect, useState } from 'react';
+
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  measure: string;
+  quantity: number;
+  provider: string;
+}
+
+interface ShoppingList {
+  id: number;
+  name: string;
+  products: Product[];
+}
+
+const ShoppingList: React.FC<{ listId: number }> = ({ listId }) => {
+  const [shoppingList, setShoppingList] = useState<ShoppingList | null>(null);
+  const [newProduct, setNewProduct] = useState<Product>({
+    id: Date.now(),
+    name: '',
+    price: 0,
+    measure: '',
+    quantity: 1,
+    provider: ''
+  });
+
+  useEffect(() => {
+    const fetchList = async () => {
+      const response = await fetch(`http://localhost:5000/lists/${listId}`);
+      const data = await response.json();
+      setShoppingList(data);
+    };
+
+    fetchList();
+  }, [listId]);
+
+  const handleAddProduct = async () => {
+    if (newProduct.name && newProduct.price > 0) {
+      const updatedList = { ...shoppingList, products: [...shoppingList?.products, newProduct] };
+      const response = await fetch(`http://localhost:5000/lists/${listId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedList),
+      });
+      if (response.ok) {
+        setShoppingList(updatedList);
+        setNewProduct({ id: Date.now(), name: '', price: 0, measure: '', quantity: 1, provider: '' });
+      }
+    }
+  };
+
+  const handleEditProduct = async (id: number, updatedProduct: Product) => {
+    const updatedProducts = shoppingList?.products.map(product =>
+      product.id === id ? updatedProduct : product
+    ) || [];
+
+    const updatedList = { ...shoppingList, products: updatedProducts };
+    await fetch(`http://localhost:5000/lists/${listId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updatedList),
+    });
+
+    setShoppingList(updatedList);
+  };
 
   return (
-    <>
-      <Button onPress={onOpen} className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
-        Open Modal
-      </Button>
-      <Modal
-        backdrop="opaque"
-        isOpen={isOpen}
-        onOpenChange={onOpenChange}
-        radius="lg"
-        classNames={{
-          body: "py-6",
-          backdrop: "bg-[#292f46]/50 backdrop-opacity-40",
-          base: "border-[#292f46] bg-[#19172c] dark:bg-[#19172c] text-[#a8b0d3]",
-          header: "border-b-[1px] border-[#292f46]",
-          footer: "border-t-[1px] border-[#292f46]",
-          closeButton: "hover:bg-white/5 active:bg-white/10",
-        }}
-      >
-        <ModalContent>
-          {(onClose) => (
-            <>
-              <ModalHeader className="flex flex-col gap-1">
-                Modal Title
-              </ModalHeader>
-              <ModalBody>
-                <BudgetPage />
-              </ModalBody>
-              <ModalFooter>
-                <Button
-                  className="foreground"
-                  variant="light"
-                  onPress={onClose}
-                >
-                  Close
-                </Button>
-                <Button
-                  className="bg-[#3daa22] shadow-lg shadow-indigo-500/20"
-                  onPress={onClose}
-                >
-                  Action
-                </Button>
-              </ModalFooter>
-            </>
-          )}
-        </ModalContent>
-      </Modal>
-    </>
+    <div>
+      <h2>{shoppingList?.name}</h2>
+      <h3>Productos:</h3>
+      <ul>
+        {shoppingList?.products.map((product) => (
+          <li key={product.id}>
+            {product.name} - {product.quantity} {product.measure} a ${product.price} (Proveedor: {product.provider})
+            <button onClick={() => handleEditProduct(product.id, { ...product, quantity: product.quantity + 1 })}>Agregar</button>
+          </li>
+        ))}
+      </ul>
+
+      <h4>Agregar Producto</h4>
+      <div>
+        <input
+          type="text"
+          placeholder="Nombre del producto"
+          value={newProduct.name}
+          onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })}
+          required
+        />
+        <input
+          type="number"
+          placeholder="Precio"
+          value={newProduct.price}
+          onChange={(e) => setNewProduct({ ...newProduct, price: Number(e.target.value) })}
+          required
+        />
+        <input
+          type="text"
+          placeholder="Medida"
+          value={newProduct.measure}
+          onChange={(e) => setNewProduct({ ...newProduct, measure: e.target.value })}
+          required
+        />
+        <input
+          type="number"
+          placeholder="Cantidad"
+          value={newProduct.quantity}
+          onChange={(e) => setNewProduct({ ...newProduct, quantity: Number(e.target.value) })}
+          min="1"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Proveedor"
+          value={newProduct.provider}
+          onChange={(e) => setNewProduct({ ...newProduct, provider: e.target.value })}
+          required
+        />
+        <button type="button" onClick={handleAddProduct}>Agregar Producto</button>
+      </div>
+    </div>
   );
-}
+};
+
+export default ShoppingList;

@@ -1,152 +1,286 @@
 {
-  "usuarios": [
+  "lists": [
     {
-      "id": "1",
-      "password": "1",
-      "email": "1@gmail.com"
+      "id": "063b",
+      "name": "seria asi ",
+      "totalAmount": 222222,
+      "items": []
     },
     {
-      "id": "2",
-      "password": "2",
-      "email": "2@gmail.com"
+      "id": "e5e3",
+      "name": "hooolaa",
+      "products": [
+        {
+          "id": 1727060180122,
+          "name": "1111",
+          "price": 111,
+          "measure": "11",
+          "quantity": 111,
+          "provider": "1"
+        }
+      ]
     },
     {
-      "id": "198f",
-      "email": "3@gmail.com",
-      "password": "3",
-      "name": "3"
+      "id": "6c20",
+      "name": "hooolaa",
+      "products": [
+        {
+          "id": 1727060180122,
+          "name": "1111",
+          "price": 111,
+          "measure": "11",
+          "quantity": 111,
+          "provider": "1"
+        }
+      ]
     },
     {
-      "id": "dca6",
-      "email": "3@gmail.com",
-      "password": "3",
-      "name": "3"
+      "id": "fe53",
+      "name": "hooolaa",
+      "products": [
+        {
+          "id": 1727060180122,
+          "name": "1111",
+          "price": 111,
+          "measure": "11",
+          "quantity": 111,
+          "provider": "1"
+        }
+      ]
     },
     {
-      "id": "1331",
-      "email": "hola@gmail.com",
-      "password": "1",
-      "name": "3"
+      "id": "f543",
+      "name": "hooolaa",
+      "products": [
+        {
+          "id": 1727060180122,
+          "name": "1111",
+          "price": 111,
+          "measure": "11",
+          "quantity": 111,
+          "provider": "1"
+        }
+      ]
     },
     {
-      "id": "c480",
-      "email": "3@gmail.com",
-      "password": "3",
-      "name": "3"
+      "id": "1a17",
+      "name": "hooolaa",
+      "products": [
+        {
+          "id": 1727060180122,
+          "name": "1111",
+          "price": 111,
+          "measure": "11",
+          "quantity": 111,
+          "provider": "1"
+        }
+      ]
     },
     {
-      "id": "0b50",
-      "email": "3@gmail.com",
-      "password": "3",
-      "name": "3"
+      "id": "fbcd",
+      "name": "hooolaa",
+      "products": [
+        {
+          "id": 1727060180122,
+          "name": "1111",
+          "price": 111,
+          "measure": "11",
+          "quantity": 111,
+          "provider": "1"
+        }
+      ]
     },
     {
-      "id": "bf4c",
-      "email": "3@gmail.com",
-      "password": "3",
-      "name": "3"
+      "id": "4d62",
+      "name": "hooolaa",
+      "products": [
+        {
+          "id": 1727060180122,
+          "name": "1111",
+          "price": 111,
+          "measure": "11",
+          "quantity": 111,
+          "provider": "1"
+        }
+      ]
     },
     {
-      "id": "01e0",
-      "email": "3@gmail.com",
-      "password": "3",
-      "name": "3"
+      "id": "7772",
+      "name": "hooolaa",
+      "products": [
+        {
+          "id": 1727060180122,
+          "name": "1111",
+          "price": 111,
+          "measure": "11",
+          "quantity": 111,
+          "provider": "1"
+        }
+      ]
     },
     {
-      "id": "e3b3",
-      "email": "juan@gmail.com",
-      "password": "1",
-      "name": "Juan Carlos"
+      "id": "a4f3",
+      "name": "hooolaa",
+      "products": [
+        {
+          "id": 1727060180122,
+          "name": "1111",
+          "price": 111,
+          "measure": "11",
+          "quantity": 111,
+          "provider": "1"
+        }
+      ]
+    },
+    {
+      "id": "18bb",
+      "name": "hooolaa",
+      "products": [
+        {
+          "id": 1727060180122,
+          "name": "1111",
+          "price": 111,
+          "measure": "11",
+          "quantity": 111,
+          "provider": "1"
+        }
+      ]
+    },
+    {
+      "id": "78e1",
+      "name": "hooolaa",
+      "products": [
+        {
+          "id": 1727060180122,
+          "name": "1111",
+          "price": 111,
+          "measure": "11",
+          "quantity": 111,
+          "provider": "1"
+        }
+      ]
+    },
+    {
+      "id": "e7a9",
+      "name": "hooolaa",
+      "products": [
+        {
+          "id": 1727060180122,
+          "name": "1111",
+          "price": 111,
+          "measure": "11",
+          "quantity": 111,
+          "provider": "1"
+        }
+      ]
+    },
+    {
+      "id": "e123",
+      "name": "hooolaa",
+      "products": [
+        {
+          "id": 1727060180122,
+          "name": "1111",
+          "price": 111,
+          "measure": "11",
+          "quantity": 111,
+          "provider": "1"
+        }
+      ]
     }
   ],
-  "productos": [
+  "items": [
     {
-      "id": "1",
-      "name": "Arroz",
-      "price": 2500,
-      "measure": "l",
-      "quantity": 2,
-      "provider": "D1"
-    },
-    {
-      "id": "2",
-      "name": "Frijol",
-      "price": 5000,
-      "measure": "lb",
-      "quantity": 4,
-      "provider": "Exito"
-    },
-    {
-      "id": "3",
-      "name": "Arepas",
-      "price": 2000,
-      "measure": "unidad",
-      "quantity": 3,
-      "provider": "Ara"
-    },
-    {
-      "id": "4",
-      "name": "Chocolisto",
-      "price": 5500,
-      "measure": "unidad",
-      "quantity": 2,
-      "provider": "D1"
-    },
-    {
-      "id": "5",
-      "name": "chocorramo",
-      "price": 2500,
-      "measure": "unidad",
-      "quantity": 10,
-      "provider": "Carulla"
-    },
-    {
-      "id": "6",
-      "name": "huevos canasta",
-      "price": 15000,
-      "measure": "unidad",
+      "id": 1,
+      "listId": 1,
+      "name": "Tody",
+      "price": 1,
       "quantity": 1,
-      "provider": "D1"
+      "measure": "litro",
+      "provider": "EXITO"
     },
     {
-      "id": "7",
-      "name": "Producto G",
-      "price": 8.99,
+      "id": 2,
+      "listId": 1,
+      "name": "Pastel",
+      "price": 25,
+      "quantity": 1,
+      "measure": "unidad",
+      "provider": "Pastelería Luna"
+    }
+  ],
+  "products": [
+    {
+      "id": "2024-09-22T22:05:16.014Z",
+      "listId": null,
+      "name": "2222222",
+      "price": 222219,
+      "quantity": 122,
+      "measure": "litro",
+      "provider": "d1"
+    },
+    {
+      "id": "2024-09-22T22:05:54.884Z",
+      "listId": null,
+      "name": "sompr",
+      "price": 5,
+      "quantity": 1,
+      "measure": "1",
+      "provider": "1"
+    },
+    {
+      "id": "2024-09-22T22:06:41.307Z",
+      "listId": null,
+      "name": "trigo",
+      "price": 200,
+      "quantity": 2,
+      "measure": "kilo",
+      "provider": "d1"
+    },
+    {
+      "id": "2024-09-22T22:07:35.278Z",
+      "listId": null,
+      "name": "arroz",
+      "price": 2500,
+      "quantity": 2,
+      "measure": "kilos",
+      "provider": "exito"
+    },
+    {
+      "id": "2024-09-22T22:37:40.834Z",
+      "listId": null,
+      "name": "wqdwqdwqdwqd",
+      "price": 1,
+      "quantity": 1,
+      "measure": "1",
+      "provider": "1"
+    },
+    {
+      "id": "2024-09-22T22:40:24.253Z",
+      "listId": null,
+      "name": "dqdwqd",
+      "price": 1,
+      "quantity": 1,
+      "measure": "11",
+      "provider": "1"
+    },
+    {
+      "id": "2024-09-22T22:42:23.238Z",
+      "listId": null,
+      "name": "cerveza",
+      "price": 1,
+      "quantity": 100,
+      "measure": "1",
+      "provider": "1"
+    },
+    {
+      "id": "2024-09-22T23:37:01.354Z",
+      "listId": "063b",
+      "name": "cerveza ",
+      "price": 1,
+      "quantity": 1,
       "measure": "kg",
-      "quantity": 120,
-      "provider": "Proveedor G"
-    },
-    {
-      "id": "8",
-      "name": "Producto H",
-      "price": 14.99,
-      "measure": "kg",
-      "quantity": 60,
-      "provider": "Proveedor H"
-    },
-    {
-      "id": "9",
-      "name": "Producto I",
-      "price": 9.5,
-      "measure": "kg",
-      "quantity": 90,
-      "provider": "Proveedor I"
-    },
-    {
-      "id": "10",
-      "name": "Producto J",
-      "price": 11.25,
-      "measure": "kg",
-      "quantity": 70,
-      "provider": "Proveedor J"
-    },
-    {
-      "id": "11",
-      "name": "Aceite",
-      "price": 8500,
-      "measure": "l",
-      "quantity": 4,
-      "provider": "Carulla"
+      "provider": "d1"
     }
   ]
 }

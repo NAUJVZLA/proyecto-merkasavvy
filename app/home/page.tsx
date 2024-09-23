@@ -12,7 +12,11 @@ import { ContenedorMenuPrincipal } from "../../components/style/Menu-Home"
 import { UserRound } from "lucide-react";
 import { TextoResponsivo } from "@/components/style/Text-responsivo";
 import ModalPurshaseList from "@/components/controller/modal-purshaseList"
-import ModalCreateList from "@/components/controller/modal-createlist"
+import CreateShoppingList from "@/components/PurchaseListModalPICHT";
+import ModalCreateList from "@/components/controller/modal-createList ";
+import BudgetModal from "../test/vista2.2";
+import ShoppingListModal from "../test/vista2";
+
 
 
 
@@ -29,6 +33,7 @@ export default function PageHome() {
   return (
     <>
       <NavigatorGeneral />
+
 
       <ContenedorMenuPrincipal >
         <Card
@@ -47,12 +52,11 @@ export default function PageHome() {
             <TextoResponsivo >Create List</TextoResponsivo>
             <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
 
-              Create List <ModalCreateList />
-
+              Create List < ModalCreateList />
             </Button>
+
           </CardFooter>
         </Card>
-
         <Card
           isFooterBlurred
           radius="lg"
@@ -91,7 +95,7 @@ export default function PageHome() {
             <TextoResponsivo >Budget</TextoResponsivo>
             <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
 
-              <ModalBudget />
+
 
             </Button>
           </CardFooter>
@@ -117,7 +121,7 @@ export default function PageHome() {
             <TextoResponsivo >Information</TextoResponsivo>
             <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
 
-              <ModalBudget />
+              <ShoppingListModal />
 
             </Button>
           </CardFooter>
