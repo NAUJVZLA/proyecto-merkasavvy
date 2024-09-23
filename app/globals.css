@@ -390,3 +390,8 @@ button:hover {
   object-fit: cover;
   /* Asegurarse de que las imágenes no se deformen */
 }
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}

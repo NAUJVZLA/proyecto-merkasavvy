@@ -8,6 +8,7 @@ import {
   useDisclosure,
 } from "@nextui-org/react";
 import BudgetPage from "@/app/budget/page";
+import CreateShoppingList from "@/app/test/page";
 export default function ModalCreateList() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
@@ -34,10 +35,10 @@ export default function ModalCreateList() {
           {(onClose) => (
             <>
               <ModalHeader className="flex flex-col gap-1">
-                Modal Title
+                Crear List
               </ModalHeader>
               <ModalBody>
-                <BudgetPage />
+                <CreateShoppingList />
               </ModalBody>
               <ModalFooter>
                 <Button

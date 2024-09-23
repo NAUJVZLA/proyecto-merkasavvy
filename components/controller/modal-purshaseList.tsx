@@ -8,6 +8,7 @@ import {
   useDisclosure,
 } from "@nextui-org/react";
 import BudgetPage from "@/app/budget/page";
+import ShoppingLists from "./ShoppingLists";
 export default function ModalPurshaseList() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
@@ -37,7 +38,7 @@ export default function ModalPurshaseList() {
                 Modal Title
               </ModalHeader>
               <ModalBody>
-                <BudgetPage />
+                <ShoppingLists />
               </ModalBody>
               <ModalFooter>
                 <Button
