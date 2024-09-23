@@ -93,7 +93,7 @@ export const GreenBackground = styled.div`
 export const ContenedorVector = styled.div`
   right: 0;
   bottom: 0;
-  width: 100%;
+  width: 100s%;
   height: 50%;
   display: flex;
   justify-content: center;
