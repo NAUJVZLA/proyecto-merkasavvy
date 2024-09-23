@@ -29,7 +29,7 @@ const Switcher = () => {
         <Switch
             defaultSelected={theme === "light" ? true : false}
             size="lg"
-            color="primary"
+            color="success"
             thumbIcon={({ isSelected, className }) => handleSwitch(isSelected, className)}
         />
     );

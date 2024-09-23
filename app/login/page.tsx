@@ -22,7 +22,8 @@ import {
   Icon,
   ForgotPassword,
   SignInButton,
-  SignInLink
+  SignInLink,
+  ContenedorVector
 } from '../../components/style/Login-Register-Styles';
 
 
@@ -127,9 +128,9 @@ const LoginComponent: React.FC = () => {
           </Link>
         </LoginForm>
         <GreenBackground >
-          <div className="vector-container">
+          <ContenedorVector >
             <Logologin />
-          </div>
+          </ContenedorVector>
         </GreenBackground>
         <ToastContainer /> {/* Contenedor de las notificaciones */}
       </ContenedorLoginRegister >
