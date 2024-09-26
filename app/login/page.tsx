@@ -1,13 +1,12 @@
-"use client"; // Indica que este componente se ejecuta en el cliente
-
-import React, { useState } from "react"; // Importa React y el hook useState
+"use client";
+import React, { useState } from "react";
 import { User, Lock } from "lucide-react"; // Importa íconos de lucide-react
 import Link from "next/link"; // Importa el componente Link de Next.js para la navegación
 import { useRouter } from "next/navigation"; // Importa el hook useRouter para la navegación programática
 import Logologin from "@/components/types/icons/logo-login"; // Importa un componente de logo
 import { ToastContainer, toast } from "react-toastify"; // Importa ToastContainer y toast
 import "react-toastify/dist/ReactToastify.css"; // Importa estilos de react-toastify
-import NavigatorComponent from "../navInitial/page"
+import NavigatorComponent from "../navInitial/page";
 import {
   ContenedorLoginRegister,
   LoginForm,
@@ -23,10 +22,8 @@ import {
   ForgotPassword,
   SignInButton,
   SignInLink,
-  ContenedorVector
-} from '../../components/style/Login-Register-Styles';
-
-
+  ContenedorVector,
+} from "../../components/style/Login-Register-Styles";
 
 const LoginComponent: React.FC = () => {
   // Define el componente funcional LoginComponent
@@ -47,12 +44,14 @@ const LoginComponent: React.FC = () => {
         body: JSON.stringify({ email, password }),
       }); // Espera a que se resuelva la promesa
       const data = await getData.json(); // Llama a .json() después de que se resuelva
-      console.log(data)
-      const user = (data.email === email && data.password === password) ? data : null;
+      console.log(data);
+      const user =
+        data.email === email && data.password === password ? data : null;
 
-      if (getData.ok) { // Verifica si la respuesta fue exitosa
+      if (getData.ok) {
+        // Verifica si la respuesta fue exitosa
         // Guarda el token o el identificador de usuario
-        sessionStorage.setItem('token', data.token); // Ajusta según tu respuesta
+        sessionStorage.setItem("token", data.token); // Ajusta según tu respuesta
         toast.success("Login successful!", {
           position: "top-right",
           autoClose: 3000,
@@ -78,10 +77,10 @@ const LoginComponent: React.FC = () => {
     // Renderiza el componente
     <>
       <NavigatorComponent />
-      <ContenedorLoginRegister >
-        <LoginForm >
-          <SignUpH2 >MerkaSavvy</SignUpH2>
-          <WelcomeBack >Welcome back !!!</WelcomeBack>
+      <ContenedorLoginRegister>
+        <LoginForm>
+          <SignUpH2>MerkaSavvy</SignUpH2>
+          <WelcomeBack>Welcome back !!!</WelcomeBack>
           <Tituloh1>Log in</Tituloh1>
           <form id="animation" onSubmit={handleSubmit}>
             <InputGroup>
@@ -97,12 +96,11 @@ const LoginComponent: React.FC = () => {
                 <Icon>
                   <User id="user" className="icon" size={20} />
                 </Icon>
-
               </InputWithIcon>
             </InputGroup>
             <InputGroup>
               <InputsLabels htmlForm="password">Password</InputsLabels>
-              <InputWithIcon >
+              <InputWithIcon>
                 <Inputs
                   type="password"
                   id="password"
@@ -114,28 +112,24 @@ const LoginComponent: React.FC = () => {
                   <Lock id="candado" className="icon" size={20} />
                 </Icon>
               </InputWithIcon>
-              <ForgotPassword href="#">
-                Forgot Password?
-              </ForgotPassword>
+              <ForgotPassword href="#">Forgot Password?</ForgotPassword>
             </InputGroup>
-            <SignInButton type="submit" >
-              SIGN IN →
-            </SignInButton>
+            <SignInButton type="submit">SIGN IN →</SignInButton>
           </form>
 
           <Link className="sign-in-link" href="register">
             I dont have an account? Sign Up
           </Link>
         </LoginForm>
-        <GreenBackground >
-          <ContenedorVector >
+        <GreenBackground>
+          <ContenedorVector>
             <Logologin />
           </ContenedorVector>
         </GreenBackground>
         <ToastContainer /> {/* Contenedor de las notificaciones */}
-      </ContenedorLoginRegister >
+      </ContenedorLoginRegister>
     </>
   );
 };
 
-export default LoginComponent; // Exporta el componente para su uso en otras partes de la aplicación
+export default LoginComponent;
