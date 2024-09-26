@@ -1,3 +1,4 @@
+import InformationPage from "@/app/information/page";
 import {
   Modal,
   ModalContent,
@@ -7,14 +8,13 @@ import {
   Button,
   useDisclosure,
 } from "@nextui-org/react";
-import BudgetPage from "@/app/budget/page";
 export default function ModalInformation() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
     <>
       <Button onPress={onOpen} className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
-        Open Modal
+        Information
       </Button>
       <Modal
         backdrop="opaque"
@@ -37,7 +37,7 @@ export default function ModalInformation() {
                 Modal Title
               </ModalHeader>
               <ModalBody>
-                <BudgetPage />
+                <InformationPage />
               </ModalBody>
               <ModalFooter>
                 <Button
