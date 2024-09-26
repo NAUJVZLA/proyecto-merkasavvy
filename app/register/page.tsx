@@ -64,7 +64,6 @@ const RegisterComponent: React.FC = () => {
   return (
     <>
       <Nav />
-
       <ContenedorLoginRegister>
         <LoginForm >
           <SignUpH2 >MerkaSavvy</SignUpH2>

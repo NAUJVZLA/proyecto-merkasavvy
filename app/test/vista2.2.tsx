@@ -6,7 +6,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Switch } from "@/components/ui/switch"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
-interface BudgetItem {
+export interface BudgetItem {
     id: number
     name: string
     price: number
@@ -16,7 +16,7 @@ interface BudgetItem {
     included: boolean
 }
 
-interface BudgetModalProps {
+export interface BudgetModalProps {
     isOpen: boolean
     onClose: () => void
 }

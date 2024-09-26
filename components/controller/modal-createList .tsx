@@ -7,16 +7,15 @@ import {
   Button,
   useDisclosure,
 } from "@nextui-org/react";
-import BudgetPage from "@/app/budget/page";
 import CreateShoppingList from "@/app/test/page";
 export default function ModalCreateList() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
     <>
-      <Button onPress={onOpen} className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
-        Open Modal
-      </Button>
+      <label onClick={onOpen}>
+        Create List
+      </label>
       <Modal
         backdrop="opaque"
         isOpen={isOpen}

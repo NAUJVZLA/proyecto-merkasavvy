@@ -114,9 +114,9 @@ export default function ShoppingListModal() {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button variant="outline" size="icon">
-                    <ShoppingCart className="h-4 w-4" />
-                </Button>
+                <label >
+                    Purshase List
+                </label>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
